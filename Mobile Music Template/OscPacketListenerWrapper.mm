@@ -22,6 +22,18 @@
     return self;
 }
 
+- (void) listen
+{
+    UdpListeningReceiveSocket s(
+                                IpEndpointName( IpEndpointName::ANY_ADDRESS, PORT ),
+                                self.wrappedListener );
+    
+    s.RunUntilSigInt();
+    
+    while (self.wrappedListener) {
+    }
+}
+
 -(void) dealloc {
     delete _wrappedListener;
 }
