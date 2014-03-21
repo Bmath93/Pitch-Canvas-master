@@ -7,17 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0422CC4418B7D9A20020EAAC /* MAGTandemCanvas.mm in Sources */ = {isa = PBXBuildFile; fileRef = 0422CC4318B7D9A20020EAAC /* MAGTandemCanvas.mm */; };
-		0422CCA918B7FA750020EAAC /* IpEndpointName.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0422CCA018B7FA750020EAAC /* IpEndpointName.cpp */; };
-		0422CCAA18B7FA750020EAAC /* NetworkingUtils.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0422CCA518B7FA750020EAAC /* NetworkingUtils.cpp */; };
-		0422CCAB18B7FA750020EAAC /* UdpSocket.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0422CCA618B7FA750020EAAC /* UdpSocket.cpp */; };
-		0422CCBA18B7FA820020EAAC /* OscOutboundPacketStream.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0422CCB118B7FA820020EAAC /* OscOutboundPacketStream.cpp */; };
-		0422CCBB18B7FA820020EAAC /* OscPrintReceivedElements.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0422CCB418B7FA820020EAAC /* OscPrintReceivedElements.cpp */; };
-		0422CCBC18B7FA820020EAAC /* OscReceivedElements.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0422CCB618B7FA820020EAAC /* OscReceivedElements.cpp */; };
-		0422CCBD18B7FA820020EAAC /* OscTypes.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0422CCB818B7FA820020EAAC /* OscTypes.cpp */; };
-		04557B5418C1046500435A3F /* MAGOSCListener.mm in Sources */ = {isa = PBXBuildFile; fileRef = 04557B5318C1046500435A3F /* MAGOSCListener.mm */; };
-		04557B5718C1111C00435A3F /* OscPacketListenerWrapper.mm in Sources */ = {isa = PBXBuildFile; fileRef = 04557B5618C1111C00435A3F /* OscPacketListenerWrapper.mm */; };
-		04557B5A18C1265A00435A3F /* ExampleOscListener.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 04557B5818C1265A00435A3F /* ExampleOscListener.cpp */; };
+		0422CC4418B7D9A20020EAAC /* MAGTandemCanvas.m in Sources */ = {isa = PBXBuildFile; fileRef = 0422CC4318B7D9A20020EAAC /* MAGTandemCanvas.m */; };
+		33CEFC3018DCB9F80079E686 /* libVVBasics.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 33CEFC2B18DCB9A20079E686 /* libVVBasics.a */; };
+		33CEFC3118DCBA050079E686 /* libVVOSC.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 33CEFC2D18DCB9A20079E686 /* libVVOSC.a */; };
 		3715B943162F23330026E296 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3715B942162F23330026E296 /* UIKit.framework */; };
 		3715B945162F23330026E296 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3715B944162F23330026E296 /* Foundation.framework */; };
 		3715B947162F23330026E296 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3715B946162F23330026E296 /* CoreGraphics.framework */; };
@@ -93,6 +85,97 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		33CEFC1618DCB9A20079E686 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 33CEFC0418DCB9A20079E686 /* VVOpenSource.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 961EA8ED100E8565007E6C25;
+			remoteInfo = VVBasics;
+		};
+		33CEFC1818DCB9A20079E686 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 33CEFC0418DCB9A20079E686 /* VVOpenSource.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 96B06C1C18BE0ECF000A921C;
+			remoteInfo = VVUIToolbox;
+		};
+		33CEFC1A18DCB9A20079E686 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 33CEFC0418DCB9A20079E686 /* VVOpenSource.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 961745F4100F86B400FB60E6;
+			remoteInfo = VVMIDI;
+		};
+		33CEFC1C18DCB9A20079E686 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 33CEFC0418DCB9A20079E686 /* VVOpenSource.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 9628D0C5100E89F700C3944E;
+			remoteInfo = VVOSC;
+		};
+		33CEFC1E18DCB9A20079E686 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 33CEFC0418DCB9A20079E686 /* VVOpenSource.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 968FAA86108B6141000E470D;
+			remoteInfo = CrashReporterTestApp;
+		};
+		33CEFC2018DCB9A20079E686 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 33CEFC0418DCB9A20079E686 /* VVOpenSource.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 9656D900100F89BA0064EEA6;
+			remoteInfo = MIDITestApp;
+		};
+		33CEFC2218DCB9A20079E686 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 33CEFC0418DCB9A20079E686 /* VVOpenSource.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 9628D179100E8B4D00C3944E;
+			remoteInfo = OSCTestApp;
+		};
+		33CEFC2418DCB9A20079E686 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 33CEFC0418DCB9A20079E686 /* VVOpenSource.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 96B49302106AEB4C008FB26E;
+			remoteInfo = MIDIviaOSC;
+		};
+		33CEFC2618DCB9A20079E686 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 33CEFC0418DCB9A20079E686 /* VVOpenSource.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 966CCBD81431EFB9006D580F;
+			remoteInfo = OSCQueryTest;
+		};
+		33CEFC2818DCB9A20079E686 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 33CEFC0418DCB9A20079E686 /* VVOpenSource.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 96ACD7211706416300138AE6;
+			remoteInfo = OSCPingTester;
+		};
+		33CEFC2A18DCB9A20079E686 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 33CEFC0418DCB9A20079E686 /* VVOpenSource.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 96C18C2D185A1A740082DE35;
+			remoteInfo = VVBasicsStatic;
+		};
+		33CEFC2C18DCB9A20079E686 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 33CEFC0418DCB9A20079E686 /* VVOpenSource.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 96C18C3E185A1A7D0082DE35;
+			remoteInfo = VVOSCStatic;
+		};
+		33CEFC2E18DCB9D90079E686 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 33CEFC0418DCB9A20079E686 /* VVOpenSource.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 968A7EEB185BA3100075DEB1;
+			remoteInfo = "Build iOS static libs";
+		};
 		3715B96D162F23330026E296 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 3715B935162F23330026E296 /* Project object */;
@@ -125,33 +208,8 @@
 
 /* Begin PBXFileReference section */
 		0422CC4218B7D9A20020EAAC /* MAGTandemCanvas.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MAGTandemCanvas.h; sourceTree = "<group>"; };
-		0422CC4318B7D9A20020EAAC /* MAGTandemCanvas.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = MAGTandemCanvas.mm; sourceTree = "<group>"; };
-		0422CCA018B7FA750020EAAC /* IpEndpointName.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = IpEndpointName.cpp; sourceTree = "<group>"; };
-		0422CCA118B7FA750020EAAC /* IpEndpointName.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IpEndpointName.h; sourceTree = "<group>"; };
-		0422CCA218B7FA750020EAAC /* NetworkingUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetworkingUtils.h; sourceTree = "<group>"; };
-		0422CCA318B7FA750020EAAC /* PacketListener.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PacketListener.h; sourceTree = "<group>"; };
-		0422CCA518B7FA750020EAAC /* NetworkingUtils.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = NetworkingUtils.cpp; sourceTree = "<group>"; };
-		0422CCA618B7FA750020EAAC /* UdpSocket.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = UdpSocket.cpp; sourceTree = "<group>"; };
-		0422CCA718B7FA750020EAAC /* TimerListener.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimerListener.h; sourceTree = "<group>"; };
-		0422CCA818B7FA750020EAAC /* UdpSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UdpSocket.h; sourceTree = "<group>"; };
-		0422CCAE18B7FA820020EAAC /* MessageMappingOscPacketListener.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageMappingOscPacketListener.h; sourceTree = "<group>"; };
-		0422CCAF18B7FA820020EAAC /* OscException.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OscException.h; sourceTree = "<group>"; };
-		0422CCB018B7FA820020EAAC /* OscHostEndianness.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OscHostEndianness.h; sourceTree = "<group>"; };
-		0422CCB118B7FA820020EAAC /* OscOutboundPacketStream.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = OscOutboundPacketStream.cpp; sourceTree = "<group>"; };
-		0422CCB218B7FA820020EAAC /* OscOutboundPacketStream.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OscOutboundPacketStream.h; sourceTree = "<group>"; };
-		0422CCB318B7FA820020EAAC /* OscPacketListener.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OscPacketListener.h; sourceTree = "<group>"; };
-		0422CCB418B7FA820020EAAC /* OscPrintReceivedElements.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = OscPrintReceivedElements.cpp; sourceTree = "<group>"; };
-		0422CCB518B7FA820020EAAC /* OscPrintReceivedElements.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OscPrintReceivedElements.h; sourceTree = "<group>"; };
-		0422CCB618B7FA820020EAAC /* OscReceivedElements.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = OscReceivedElements.cpp; sourceTree = "<group>"; };
-		0422CCB718B7FA820020EAAC /* OscReceivedElements.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OscReceivedElements.h; sourceTree = "<group>"; };
-		0422CCB818B7FA820020EAAC /* OscTypes.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = OscTypes.cpp; sourceTree = "<group>"; };
-		0422CCB918B7FA820020EAAC /* OscTypes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OscTypes.h; sourceTree = "<group>"; };
-		04557B5218C1046500435A3F /* MAGOSCListener.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MAGOSCListener.h; sourceTree = "<group>"; };
-		04557B5318C1046500435A3F /* MAGOSCListener.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = MAGOSCListener.mm; sourceTree = "<group>"; };
-		04557B5518C1111C00435A3F /* OscPacketListenerWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OscPacketListenerWrapper.h; sourceTree = "<group>"; };
-		04557B5618C1111C00435A3F /* OscPacketListenerWrapper.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = OscPacketListenerWrapper.mm; sourceTree = "<group>"; };
-		04557B5818C1265A00435A3F /* ExampleOscListener.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ExampleOscListener.cpp; sourceTree = "<group>"; };
-		04557B5918C1265A00435A3F /* ExampleOscListener.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExampleOscListener.h; sourceTree = "<group>"; };
+		0422CC4318B7D9A20020EAAC /* MAGTandemCanvas.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MAGTandemCanvas.m; sourceTree = "<group>"; };
+		33CEFC0418DCB9A20079E686 /* VVOpenSource.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = VVOpenSource.xcodeproj; path = "../Downloads/vvopensource-master/VVOpenSource.xcodeproj"; sourceTree = "<group>"; };
 		3715B93E162F23330026E296 /* PitchCanvas.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PitchCanvas.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3715B942162F23330026E296 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		3715B944162F23330026E296 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -239,6 +297,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				33CEFC3118DCBA050079E686 /* libVVOSC.a in Frameworks */,
+				33CEFC3018DCB9F80079E686 /* libVVBasics.a in Frameworks */,
 				3715B9A4162F42CD0026E296 /* AVFoundation.framework in Frameworks */,
 				3715B9A2162F42C70026E296 /* AudioToolbox.framework in Frameworks */,
 				3715B993162F2F540026E296 /* libpd-ios.a in Frameworks */,
@@ -261,46 +321,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		0422CC9F18B7FA750020EAAC /* ip */ = {
+		33CEFC0518DCB9A20079E686 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				0422CCA418B7FA750020EAAC /* posix */,
-				0422CCA018B7FA750020EAAC /* IpEndpointName.cpp */,
-				0422CCA118B7FA750020EAAC /* IpEndpointName.h */,
-				0422CCA218B7FA750020EAAC /* NetworkingUtils.h */,
-				0422CCA318B7FA750020EAAC /* PacketListener.h */,
-				0422CCA718B7FA750020EAAC /* TimerListener.h */,
-				0422CCA818B7FA750020EAAC /* UdpSocket.h */,
+				33CEFC1718DCB9A20079E686 /* VVBasics.framework */,
+				33CEFC1918DCB9A20079E686 /* VVUIToolbox.framework */,
+				33CEFC1B18DCB9A20079E686 /* VVMIDI.framework */,
+				33CEFC1D18DCB9A20079E686 /* VVOSC.framework */,
+				33CEFC1F18DCB9A20079E686 /* CrashReporterTestApp.app */,
+				33CEFC2118DCB9A20079E686 /* MIDITestApp.app */,
+				33CEFC2318DCB9A20079E686 /* OSCTestApp.app */,
+				33CEFC2518DCB9A20079E686 /* MIDIviaOSC.app */,
+				33CEFC2718DCB9A20079E686 /* OSCQueryTest.app */,
+				33CEFC2918DCB9A20079E686 /* OSCPingTester.app */,
+				33CEFC2B18DCB9A20079E686 /* libVVBasics.a */,
+				33CEFC2D18DCB9A20079E686 /* libVVOSC.a */,
 			);
-			path = ip;
-			sourceTree = "<group>";
-		};
-		0422CCA418B7FA750020EAAC /* posix */ = {
-			isa = PBXGroup;
-			children = (
-				0422CCA518B7FA750020EAAC /* NetworkingUtils.cpp */,
-				0422CCA618B7FA750020EAAC /* UdpSocket.cpp */,
-			);
-			path = posix;
-			sourceTree = "<group>";
-		};
-		0422CCAD18B7FA820020EAAC /* osc */ = {
-			isa = PBXGroup;
-			children = (
-				0422CCB318B7FA820020EAAC /* OscPacketListener.h */,
-				0422CCAE18B7FA820020EAAC /* MessageMappingOscPacketListener.h */,
-				0422CCAF18B7FA820020EAAC /* OscException.h */,
-				0422CCB018B7FA820020EAAC /* OscHostEndianness.h */,
-				0422CCB118B7FA820020EAAC /* OscOutboundPacketStream.cpp */,
-				0422CCB218B7FA820020EAAC /* OscOutboundPacketStream.h */,
-				0422CCB418B7FA820020EAAC /* OscPrintReceivedElements.cpp */,
-				0422CCB518B7FA820020EAAC /* OscPrintReceivedElements.h */,
-				0422CCB618B7FA820020EAAC /* OscReceivedElements.cpp */,
-				0422CCB718B7FA820020EAAC /* OscReceivedElements.h */,
-				0422CCB818B7FA820020EAAC /* OscTypes.cpp */,
-				0422CCB918B7FA820020EAAC /* OscTypes.h */,
-			);
-			path = osc;
+			name = Products;
 			sourceTree = "<group>";
 		};
 		3715B933162F23330026E296 = {
@@ -314,6 +351,7 @@
 				3715B96F162F23330026E296 /* Mobile Music TemplateTests */,
 				3715B941162F23330026E296 /* Frameworks */,
 				3715B93F162F23330026E296 /* Products */,
+				33CEFC0418DCB9A20079E686 /* VVOpenSource.xcodeproj */,
 			);
 			sourceTree = "<group>";
 		};
@@ -347,13 +385,7 @@
 				3715B95A162F23330026E296 /* MainStoryboard_iPhone.storyboard */,
 				3715B95D162F23330026E296 /* MainStoryboard_iPad.storyboard */,
 				0422CC4218B7D9A20020EAAC /* MAGTandemCanvas.h */,
-				0422CC4318B7D9A20020EAAC /* MAGTandemCanvas.mm */,
-				04557B5918C1265A00435A3F /* ExampleOscListener.h */,
-				04557B5818C1265A00435A3F /* ExampleOscListener.cpp */,
-				04557B5518C1111C00435A3F /* OscPacketListenerWrapper.h */,
-				04557B5618C1111C00435A3F /* OscPacketListenerWrapper.mm */,
-				04557B5218C1046500435A3F /* MAGOSCListener.h */,
-				04557B5318C1046500435A3F /* MAGOSCListener.mm */,
+				0422CC4318B7D9A20020EAAC /* MAGTandemCanvas.m */,
 				37600CA5180BA10000934FE2 /* MAGInfoViewController.h */,
 				37600CA6180BA10000934FE2 /* MAGInfoViewController.m */,
 				3AB75F7217A86145007A6A62 /* MAGNavigationController.h */,
@@ -382,8 +414,6 @@
 		3715B949162F23330026E296 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				0422CCAD18B7FA820020EAAC /* osc */,
-				0422CC9F18B7FA750020EAAC /* ip */,
 				3A6B371517A19526002DC520 /* canvas_audio_generator.pd */,
 				3A6B371617A19526002DC520 /* mag_template.pd */,
 				3AB75F7D17AAC1EA007A6A62 /* loud.c */,
@@ -494,6 +524,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				33CEFC2F18DCB9D90079E686 /* PBXTargetDependency */,
 				3715B992162F2F290026E296 /* PBXTargetDependency */,
 			);
 			name = PitchCanvas;
@@ -541,6 +572,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				English,
 			);
 			mainGroup = 3715B933162F23330026E296;
 			productRefGroup = 3715B93F162F23330026E296 /* Products */;
@@ -549,6 +581,10 @@
 				{
 					ProductGroup = 3715B985162F27620026E296 /* Products */;
 					ProjectRef = 3715B984162F27620026E296 /* libpd.xcodeproj */;
+				},
+				{
+					ProductGroup = 33CEFC0518DCB9A20079E686 /* Products */;
+					ProjectRef = 33CEFC0418DCB9A20079E686 /* VVOpenSource.xcodeproj */;
 				},
 			);
 			projectRoot = "";
@@ -560,6 +596,90 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
+		33CEFC1718DCB9A20079E686 /* VVBasics.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = VVBasics.framework;
+			remoteRef = 33CEFC1618DCB9A20079E686 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		33CEFC1918DCB9A20079E686 /* VVUIToolbox.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = VVUIToolbox.framework;
+			remoteRef = 33CEFC1818DCB9A20079E686 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		33CEFC1B18DCB9A20079E686 /* VVMIDI.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = VVMIDI.framework;
+			remoteRef = 33CEFC1A18DCB9A20079E686 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		33CEFC1D18DCB9A20079E686 /* VVOSC.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = VVOSC.framework;
+			remoteRef = 33CEFC1C18DCB9A20079E686 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		33CEFC1F18DCB9A20079E686 /* CrashReporterTestApp.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = CrashReporterTestApp.app;
+			remoteRef = 33CEFC1E18DCB9A20079E686 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		33CEFC2118DCB9A20079E686 /* MIDITestApp.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = MIDITestApp.app;
+			remoteRef = 33CEFC2018DCB9A20079E686 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		33CEFC2318DCB9A20079E686 /* OSCTestApp.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = OSCTestApp.app;
+			remoteRef = 33CEFC2218DCB9A20079E686 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		33CEFC2518DCB9A20079E686 /* MIDIviaOSC.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = MIDIviaOSC.app;
+			remoteRef = 33CEFC2418DCB9A20079E686 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		33CEFC2718DCB9A20079E686 /* OSCQueryTest.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = OSCQueryTest.app;
+			remoteRef = 33CEFC2618DCB9A20079E686 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		33CEFC2918DCB9A20079E686 /* OSCPingTester.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = OSCPingTester.app;
+			remoteRef = 33CEFC2818DCB9A20079E686 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		33CEFC2B18DCB9A20079E686 /* libVVBasics.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libVVBasics.a;
+			remoteRef = 33CEFC2A18DCB9A20079E686 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		33CEFC2D18DCB9A20079E686 /* libVVOSC.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libVVOSC.a;
+			remoteRef = 33CEFC2C18DCB9A20079E686 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 		3715B98D162F27620026E296 /* libpd-ios.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
@@ -654,7 +774,6 @@
 				3715B94F162F23330026E296 /* main.m in Sources */,
 				3715B953162F23330026E296 /* MAGAppDelegate.mm in Sources */,
 				3715B962162F23330026E296 /* MAGViewController.m in Sources */,
-				0422CCAB18B7FA750020EAAC /* UdpSocket.cpp in Sources */,
 				3A559D7F177DE8720035B7EF /* MAGCircle.m in Sources */,
 				3A9C0FB017835E4A00221F62 /* MAGBackground.m in Sources */,
 				3AB75F8B17AAC4FD007A6A62 /* loud.c in Sources */,
@@ -662,26 +781,17 @@
 				3AB75F8D17AAC502007A6A62 /* m_pd.c in Sources */,
 				37600CA7180BA10000934FE2 /* MAGInfoViewController.m in Sources */,
 				3AB75F8E17AAC506007A6A62 /* m_pd.h in Sources */,
-				0422CCBA18B7FA820020EAAC /* OscOutboundPacketStream.cpp in Sources */,
 				3AB75F8F17AAC509007A6A62 /* shared.c in Sources */,
 				3AB75F9017AAC50C007A6A62 /* shared.h in Sources */,
 				3AB75F9117AAC50F007A6A62 /* sic.c in Sources */,
 				3AB75F9217AAC511007A6A62 /* sic.h in Sources */,
 				3A8937841785F93D005AD710 /* MAGSampleHandler.m in Sources */,
-				0422CCA918B7FA750020EAAC /* IpEndpointName.cpp in Sources */,
 				3A8937881785FA5A005AD710 /* MAGSample.m in Sources */,
-				04557B5418C1046500435A3F /* MAGOSCListener.mm in Sources */,
-				0422CC4418B7D9A20020EAAC /* MAGTandemCanvas.mm in Sources */,
-				04557B5718C1111C00435A3F /* OscPacketListenerWrapper.mm in Sources */,
+				0422CC4418B7D9A20020EAAC /* MAGTandemCanvas.m in Sources */,
 				3A89378B178600C9005AD710 /* MAGCircleArray.m in Sources */,
 				3A875F79178740C70053955D /* MAGGesture.m in Sources */,
 				3A8956311799BEF000788E9D /* MAGMainViewController.m in Sources */,
-				0422CCBB18B7FA820020EAAC /* OscPrintReceivedElements.cpp in Sources */,
-				0422CCAA18B7FA750020EAAC /* NetworkingUtils.cpp in Sources */,
-				0422CCBC18B7FA820020EAAC /* OscReceivedElements.cpp in Sources */,
-				0422CCBD18B7FA820020EAAC /* OscTypes.cpp in Sources */,
 				3AB75F7417A86145007A6A62 /* MAGNavigationController.m in Sources */,
-				04557B5A18C1265A00435A3F /* ExampleOscListener.cpp in Sources */,
 				3AB75F7617AAAA95007A6A62 /* overdrive.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -701,6 +811,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		33CEFC2F18DCB9D90079E686 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Build iOS static libs";
+			targetProxy = 33CEFC2E18DCB9D90079E686 /* PBXContainerItemProxy */;
+		};
 		3715B96E162F23330026E296 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 3715B93D162F23330026E296 /* PitchCanvas */;
