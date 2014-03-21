@@ -24,6 +24,10 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.manager = [[OSCManager alloc] init];
+    [self.manager setDelegate:self];
+    self.outport = [self.manager createNewOutputToAddress:@"localhost" atPort:7000];
+    [self.manager createNewInputForPort:7000];
 }
 
 - (IBAction)backToSetup:(id)sender {
@@ -31,14 +35,8 @@
 }
 
 - (IBAction)sendOSCstuff:(id)sender {
-    OSCManager *manager = [[OSCManager alloc] init];
-    [manager setDelegate:self];
-    
-    OSCOutPort *outport = [manager createNewOutputToAddress:@"localhost" atPort:7000];
-    
-    [manager createNewInputForPort:7000];
-    
-    //OSCMessage *newMsg = [OSCMessage createWithAddress:@"/Address/Path/1"];
+    //OSCMessage *newMsg = [[OSCMessage alloc] initWithAddress:@"empty"];
+    OSCMessage *newMsg = [OSCMessage createWithAddress:@"empty"];
 }
 
 @end
