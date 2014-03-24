@@ -23,11 +23,18 @@
 
 - (void)viewDidLoad
 {
+    NSLog(@"viewDidLoad called");
     [super viewDidLoad];
-    self.manager = [[OSCManager alloc] init];
-    [self.manager setDelegate:self];
-    self.outport = [self.manager createNewOutputToAddress:@"localhost" atPort:7000];
-    [self.manager createNewInputForPort:7000];
+    if (!self.manager){
+        NSLog(@"!self.manager");
+        self.manager = [[OSCManager alloc] init];
+        [self.manager setDelegate:self];
+    }
+    if (!self.outport){
+        NSLog(@"!self.outport");
+        self.outport = [self.manager createNewOutputToAddress:@"localhost" atPort:30200];
+        [self.manager createNewInputForPort:30200];
+    }
 }
 
 - (IBAction)backToSetup:(id)sender {
@@ -36,7 +43,9 @@
 
 - (IBAction)sendOSCstuff:(id)sender {
     //OSCMessage *newMsg = [[OSCMessage alloc] initWithAddress:@"empty"];
-    OSCMessage *newMsg = [OSCMessage createWithAddress:@"empty"];
+    OSCMessage *newMsg = [OSCMessage createWithAddress:@"/Address/Path/1"];
+    [newMsg addFloat:12.34];
+    [self.outport sendThisMessage:newMsg];
 }
 
 @end

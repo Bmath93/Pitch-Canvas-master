@@ -110,7 +110,7 @@
                 </pongPressGestureRecognizer>
                 <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.5" id="9yD-uV-JzI"/>
             </objects>
-            <point key="canvasLocation" x="31" y="-101"/>
+            <point key="canvasLocation" x="727" y="-101"/>
         </scene>
         <!--Main View Controller-->
         <scene sceneID="bTD-yL-q58">
@@ -258,7 +258,7 @@
                                 </state>
                                 <connections>
                                     <action selector="loadTandemCanvas:" destination="N5n-Gc-kor" eventType="touchUpInside" id="AVK-hi-O7D"/>
-                                    <segue destination="sRO-yQ-DhX" kind="push" identifier="loadTandemCanvas" id="2ml-oR-yzB"/>
+                                    <segue destination="sRO-yQ-DhX" kind="push" identifier="loadTandemCanvas1" id="2ml-oR-yzB"/>
                                 </connections>
                             </button>
                         </subviews>

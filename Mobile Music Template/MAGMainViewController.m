@@ -54,7 +54,7 @@
 }
 
 - (IBAction)loadTandemCanvas:(id)sender {
-    [self performSegueWithIdentifier:@"loadTandemCanvas" sender:self];
+    [self performSegueWithIdentifier:@"loadTandemCanvas1" sender:self];
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
