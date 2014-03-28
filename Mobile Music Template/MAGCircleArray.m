@@ -49,6 +49,7 @@
     CGPoint currentCenter = CGPointMake(0.0, circleRadius/2.0);
     
     int pitchCounter = shift;
+    int shiftCounter = 1;
     float pitchBase = startingPitch;
     NSNumber *currentPitch = [NSNumber numberWithFloat:0.0];
     while (currentCenter.x < 768+circleRadius*2.0)
@@ -90,9 +91,8 @@
         {
             centerAboveScreen = TRUE;
             currentCenter.y = circleRadius/2.0;
-            pitchCounter = shift;
             //enable mulitple scales
-            /*
+            
             if ( ((int )(currentCenter.x/(2.0*altitude)))%(4) == 0)
             {
                 startingPitch = startingPitch + 7.0;
@@ -100,9 +100,20 @@
             else
             {
                 startingPitch = startingPitch - 5.0;
+                
+                if (shiftCounter == 1){
+                    shift = shift + 2;
+                    pitchBase = startingPitch + 24;
+                }
+                else if (shiftCounter == 2){
+                    
+                }
+                
+                NSLog(@"shift: %i",shift);
             }
-            */
-            pitchBase = startingPitch;
+            
+            pitchCounter = shift;
+            //pitchBase = startingPitch;
         }
     }
     _circleArray = [[NSArray alloc] initWithArray:futureCircles];
