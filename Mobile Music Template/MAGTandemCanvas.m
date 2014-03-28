@@ -42,7 +42,6 @@
 }
 
 - (IBAction)sendOSCstuff:(id)sender {
-    //OSCMessage *newMsg = [[OSCMessage alloc] initWithAddress:@"empty"];
     OSCMessage *newMsg = [OSCMessage createWithAddress:@"/Address/Path/1"];
     [newMsg addFloat:12.34];
     [self.outport sendThisMessage:newMsg];

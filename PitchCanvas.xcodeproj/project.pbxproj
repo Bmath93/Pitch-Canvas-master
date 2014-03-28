@@ -7,9 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0422CC4418B7D9A20020EAAC /* MAGTandemCanvas.m in Sources */ = {isa = PBXBuildFile; fileRef = 0422CC4318B7D9A20020EAAC /* MAGTandemCanvas.m */; };
 		33CEFC3018DCB9F80079E686 /* libVVBasics.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 33CEFC2B18DCB9A20079E686 /* libVVBasics.a */; };
 		33CEFC3118DCBA050079E686 /* libVVOSC.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 33CEFC2D18DCB9A20079E686 /* libVVOSC.a */; };
+		33FF575318E5EA300052A226 /* MAGAnotherCanvas.m in Sources */ = {isa = PBXBuildFile; fileRef = 33FF575218E5EA300052A226 /* MAGAnotherCanvas.m */; };
 		3715B943162F23330026E296 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3715B942162F23330026E296 /* UIKit.framework */; };
 		3715B945162F23330026E296 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3715B944162F23330026E296 /* Foundation.framework */; };
 		3715B947162F23330026E296 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3715B946162F23330026E296 /* CoreGraphics.framework */; };
@@ -207,9 +207,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0422CC4218B7D9A20020EAAC /* MAGTandemCanvas.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MAGTandemCanvas.h; sourceTree = "<group>"; };
-		0422CC4318B7D9A20020EAAC /* MAGTandemCanvas.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MAGTandemCanvas.m; sourceTree = "<group>"; };
 		33CEFC0418DCB9A20079E686 /* VVOpenSource.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = VVOpenSource.xcodeproj; path = "../Downloads/vvopensource-master/VVOpenSource.xcodeproj"; sourceTree = "<group>"; };
+		33FF575118E5EA300052A226 /* MAGAnotherCanvas.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MAGAnotherCanvas.h; sourceTree = "<group>"; };
+		33FF575218E5EA300052A226 /* MAGAnotherCanvas.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MAGAnotherCanvas.m; sourceTree = "<group>"; };
 		3715B93E162F23330026E296 /* PitchCanvas.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PitchCanvas.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3715B942162F23330026E296 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		3715B944162F23330026E296 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -384,12 +384,12 @@
 				3715B952162F23330026E296 /* MAGAppDelegate.mm */,
 				3715B95A162F23330026E296 /* MainStoryboard_iPhone.storyboard */,
 				3715B95D162F23330026E296 /* MainStoryboard_iPad.storyboard */,
-				0422CC4218B7D9A20020EAAC /* MAGTandemCanvas.h */,
-				0422CC4318B7D9A20020EAAC /* MAGTandemCanvas.m */,
 				37600CA5180BA10000934FE2 /* MAGInfoViewController.h */,
 				37600CA6180BA10000934FE2 /* MAGInfoViewController.m */,
 				3AB75F7217A86145007A6A62 /* MAGNavigationController.h */,
 				3AB75F7317A86145007A6A62 /* MAGNavigationController.m */,
+				33FF575118E5EA300052A226 /* MAGAnotherCanvas.h */,
+				33FF575218E5EA300052A226 /* MAGAnotherCanvas.m */,
 				3A89562F1799BEF000788E9D /* MAGMainViewController.h */,
 				3A8956301799BEF000788E9D /* MAGMainViewController.m */,
 				3715B960162F23330026E296 /* MAGViewController.h */,
@@ -772,6 +772,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3715B94F162F23330026E296 /* main.m in Sources */,
+				33FF575318E5EA300052A226 /* MAGAnotherCanvas.m in Sources */,
 				3715B953162F23330026E296 /* MAGAppDelegate.mm in Sources */,
 				3715B962162F23330026E296 /* MAGViewController.m in Sources */,
 				3A559D7F177DE8720035B7EF /* MAGCircle.m in Sources */,
@@ -787,7 +788,6 @@
 				3AB75F9217AAC511007A6A62 /* sic.h in Sources */,
 				3A8937841785F93D005AD710 /* MAGSampleHandler.m in Sources */,
 				3A8937881785FA5A005AD710 /* MAGSample.m in Sources */,
-				0422CC4418B7D9A20020EAAC /* MAGTandemCanvas.m in Sources */,
 				3A89378B178600C9005AD710 /* MAGCircleArray.m in Sources */,
 				3A875F79178740C70053955D /* MAGGesture.m in Sources */,
 				3A8956311799BEF000788E9D /* MAGMainViewController.m in Sources */,
