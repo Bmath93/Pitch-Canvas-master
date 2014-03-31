@@ -927,7 +927,7 @@
 				GCC_PREFIX_HEADER = "Mobile Music Template/PitchCanvas-Prefix.pch";
 				INFOPLIST_FILE = "Mobile Music Template/PitchCanvas-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
-				"OTHER_CFLAGS[arch=*]" = "-DPD";
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = PitchCanvas;
 				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = 2;
@@ -948,6 +948,7 @@
 				INFOPLIST_FILE = "Mobile Music Template/PitchCanvas-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				"OTHER_CFLAGS[arch=*]" = "-DPD";
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = PitchCanvas;
 				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = 2;
