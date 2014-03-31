@@ -29,31 +29,34 @@
     
     BOOL centerAboveScreen = TRUE; //boolean describing whether or not the current column of circles begins with the first circle's center above the end of the screen
     float altitude = sqrt(3.0)/2.0*circleRadius;
-    NSArray *aboveScreenPitches = [[NSArray alloc] initWithObjects:[NSNumber numberWithFloat:21.0],
+    NSMutableArray *aboveScreenPitches = [[NSMutableArray alloc] initWithObjects:[NSNumber numberWithFloat:21.0],
                                    [NSNumber numberWithFloat:17.0],
                                    [NSNumber numberWithFloat:14.0],
                                    [NSNumber numberWithFloat:11.0],
                                    [NSNumber numberWithFloat:7.0],
                                    [NSNumber numberWithFloat:4.0],
                                    [NSNumber numberWithFloat:0.0],nil];
+    int aspFourthIndex = 1; //index of note in aboveScreenPitches that is a perfect fourth from the tonic
     
-    NSArray *notAboveScreenPitches = [[NSArray alloc] initWithObjects:[NSNumber numberWithFloat:23.0],
+    NSMutableArray *notAboveScreenPitches = [[NSMutableArray alloc] initWithObjects:[NSNumber numberWithFloat:23.0],
                                       [NSNumber numberWithFloat:19.0],
                                       [NSNumber numberWithFloat:16.0],
                                       [NSNumber numberWithFloat:12.0],
                                       [NSNumber numberWithFloat:9.0],
                                       [NSNumber numberWithFloat:5.0],
                                       [NSNumber numberWithFloat:2.0],nil];
+    int naspFourthIndex = 5; //index of note in notAboveScreenPitches that is a perfect fourth from the tonic
     
     NSMutableArray *futureCircles = [[NSMutableArray alloc] init];
     CGPoint currentCenter = CGPointMake(0.0, circleRadius/2.0);
     
     int pitchCounter = shift;
-    int shiftCounter = 1;
+    //int shiftCounter = 1;
     float pitchBase = startingPitch;
     NSNumber *currentPitch = [NSNumber numberWithFloat:0.0];
     while (currentCenter.x < 768+circleRadius*2.0)
     {
+        NSLog(@"%f",currentCenter.x/(2.0*altitude));
         //create a new array for this column of circles
         NSMutableArray *columnCircles = [[NSMutableArray alloc] init];
         
@@ -77,7 +80,7 @@
         
         //add the new array to futureCircles
         [futureCircles addObject:columnCircles];
-                
+        
         //increment currentCenter.x
         currentCenter.x = currentCenter.x + 2.0*altitude;
         if (centerAboveScreen)
@@ -86,34 +89,34 @@
             currentCenter.y = -circleRadius/2.0;
             pitchCounter = shift;
             pitchBase = startingPitch;
+            
+            //enable mulitple scales
+                if ( (int )(currentCenter.x/(2.0*altitude)) != 1 )
+                {
+                    //sharp the fourth to change the key
+                    [aboveScreenPitches replaceObjectAtIndex:aspFourthIndex withObject:[NSNumber numberWithFloat:[[aboveScreenPitches objectAtIndex:aspFourthIndex] floatValue] + 1.0]];
+                    [notAboveScreenPitches replaceObjectAtIndex:naspFourthIndex withObject:[NSNumber numberWithFloat:[[notAboveScreenPitches objectAtIndex:naspFourthIndex] floatValue] + 1.0]];
+                    
+                    //find the index of the fourth in the new key
+                    aspFourthIndex = aspFourthIndex - 2;
+                    naspFourthIndex = naspFourthIndex - 2;
+                
+                    //make sure the indeces are above zero, correct if otherwise
+                    if (aspFourthIndex < 0) {
+                        aspFourthIndex = aspFourthIndex + aboveScreenPitches.count;
+                    }
+                    if (naspFourthIndex < 0) {
+                        naspFourthIndex = naspFourthIndex + notAboveScreenPitches.count;
+                    }
+                }
+            
         }
         else
         {
             centerAboveScreen = TRUE;
             currentCenter.y = circleRadius/2.0;
-            //enable mulitple scales
-            
-            if ( ((int )(currentCenter.x/(2.0*altitude)))%(4) == 0)
-            {
-                startingPitch = startingPitch + 7.0;
-            }
-            else
-            {
-                startingPitch = startingPitch - 5.0;
-                
-                if (shiftCounter == 1){
-                    shift = shift + 2;
-                    pitchBase = startingPitch + 24;
-                }
-                else if (shiftCounter == 2){
-                    
-                }
-                
-                NSLog(@"shift: %i",shift);
-            }
-            
             pitchCounter = shift;
-            //pitchBase = startingPitch;
+            pitchBase = startingPitch;
         }
     }
     _circleArray = [[NSArray alloc] initWithArray:futureCircles];
