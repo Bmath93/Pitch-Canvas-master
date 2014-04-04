@@ -144,7 +144,10 @@
             [prefs setObject:NULL forKey:previousMapKey];
         }
         
+        //creating a matrix for the pitches in the triangular regions to be referred to later
         NSMutableArray *futurePitchMap = [[NSMutableArray alloc] init];
+        //slidePitchReference stores the fractional contributions of the pitches of nearby circles (coefficients) to the current pixel's pitch.
+        //slidePitchReference will have dimensions altitude by circleRadius by three, with the three-dimensional matrix stored in [relativePixelRow,relativePixelColumn] containing the three coefficients
         NSMutableArray *slidePitchReference = [[NSMutableArray alloc] init];
         //c1 = (0,-r/2)
         //c2 = (0,3r/2)
@@ -160,10 +163,14 @@
         float p3Coefficient = 0.0;
         for (int xCounter = 0; xCounter <= (int)altitude; xCounter = xCounter + 1)
         {
-            //add an array for each pixel in the circle radius
+            //add an array for each row in the box
             [slidePitchReference addObject:[[NSMutableArray alloc] init]];
+            
             for (int yCounter = 0; yCounter <= (int) circleRadius; yCounter = yCounter + 1)
             {
+                //in this section, adds a 1x3 array to slidePitchReference for each pixel in the box.
+                //each element in this new array will be the fractional contribution of the pitches of the adjacent circles (coefficients) to the pitch of the current pixel
+                
                 //for each (x,y):
                 //calculate its distance from the center of each circle
                 d1 = sqrt( pow( center1.x - xCounter, 2)+pow( center1.y - yCounter, 2));
@@ -244,17 +251,21 @@
         NSArray *slidePitchForCurrentPixel = [[NSArray alloc] init];
         
         //NSLog(@"cell index:\tisTriangle:\tisFlipped:\trelevantCircles:");
+        
+        //view the screen as divided into cells of horizontal dimension altitude, and vertical dimension circleRadius
+        //iterate through these cells, first in horizontally and then vertically
+        //some cells will be entirely contained within a circle, and some will represent triangular regions
         for (int horizontalCellIndex = 0; horizontalCellIndex < 768/altitude; horizontalCellIndex = horizontalCellIndex + 1)
         {
             NSLog(@"currently initializing cells in column: %i",((int) altitude)*horizontalCellIndex);
             for (int verticalCellIndex = 0; verticalCellIndex < 1024/(circleRadius); verticalCellIndex = verticalCellIndex + 1)
             {
-                //determine isFlipped
+                //determine if the current cell is flipped relative to the cells in the first column. store in isFlipped
                 if (horizontalCellIndex % 2 == 0){isFlipped = FALSE;}
                 else if (horizontalCellIndex % 2 == 1){isFlipped = TRUE;}
                 else {NSLog(@"error: horizontalCellIndex mod 2 != 0 or 1");}
                 
-                //determine isTriangle
+                //determine if the current cell represents a triangular region. store in isTriangle
                 if ((horizontalCellIndex%4 == 0) || (horizontalCellIndex%4 == 3))
                 {
                     if (verticalCellIndex % 2 == 0){isTriangle = FALSE;}
@@ -268,6 +279,7 @@
                     else {NSLog(@"error: (verticalCellIndex+1) mod 2 != 0 or 1");}
                 };
                 
+                //if the current cell is a triangle, find the relevant (adjacent) circles using the knowledge of the current cell index. calls the giveCircleForCellAt method
                 if (isTriangle)
                 {
                     if (horizontalCellIndex%4 == 0)
@@ -295,76 +307,71 @@
                         [relevantCircles addObject:[self giveCircleForCellAt:horizontalCellIndex-1 and:verticalCellIndex]];
                     }
                 }
+                //if the current cell is not a triangle, find the circle containing this cell using the knowledge of the current cell location
                 else
                 {
                     [relevantCircles addObject:[self giveCircleForCellAt:horizontalCellIndex and:verticalCellIndex]];
                 }
                 
-                /*
-                 NSMutableString *printStr = [[NSMutableString alloc] init];
-                 [printStr appendString:@"("];
-                 [printStr appendFormat:@"%i",horizontalCellIndex];
-                 [printStr appendString:@","];
-                 [printStr appendFormat:@"%i",verticalCellIndex];
-                 [printStr appendString:@")\t\t"];
-                 
-                 if (isTriangle){[printStr appendString:@"True\t\t"];}
-                 else {[printStr appendString:@"False\t\t"];}
-                 if (isFlipped){[printStr appendString:@"True\t\t"];}
-                 else {[printStr appendString:@"False\t\t"];}
-                 
-                 [printStr appendString:@"{"];
-                 for (int circleCounter = 0; circleCounter < relevantCircles.count; circleCounter = circleCounter + 1)
-                 {
-                 NSArray *theRelevantCircle = relevantCircles[circleCounter];
-                 [printStr appendString:@"["];
-                 [printStr appendFormat:@"%i",[theRelevantCircle[0] intValue]];
-                 [printStr appendString:@","];
-                 [printStr appendFormat:@"%i",[theRelevantCircle[1] intValue]];
-                 [printStr appendString:@"]"];
-                 }
-                 [printStr appendString:@"}"];
-                 NSLog(printStr);
-                 */
-                
                 //NSLog(@"c1x: %f, c1y: %f, c1.radius: %f, c1.pitch: %f",c1.center.x,c1.center.y,c1.radius.floatValue,c1.pitch.floatValue);
                 
+                //iterate throught the pixels stored in the current cell, first horizontally and then vertically
                 for (int horizontalPixelIndex = 0; horizontalPixelIndex < altitude; horizontalPixelIndex = horizontalPixelIndex + 1)
                 {
                     for (int verticalPixelIndex = 0; verticalPixelIndex < circleRadius; verticalPixelIndex = verticalPixelIndex + 1)
                     {
+                        //tempHorizontalIndex stores the pixel's absolute horizontal location on the screen, and will be the row number of the pitch value stored in the final pitchMap
                         tempHorizontalIndex = horizontalCellIndex*((int) altitude)+horizontalPixelIndex;
+                        
+                        //tempVerticalIndex stores the pixel's absolute vertical location on the screen, and will be the column number of the pitch value stored in the final pitchMap
                         tempVerticalIndex = verticalCellIndex*circleRadius+verticalPixelIndex;
+                        
+                        //makesure the current pixel is on the screen. if not, ignore it.
                         if ((tempHorizontalIndex<769) && (tempVerticalIndex<1025))
                         {
+                            //assign the first element (of type MAGCirlce) of relevantCirles to c1. relevantCircles gauranteed to have one element.
                             c1 = [[self.circleArray objectAtIndex:[[[relevantCircles objectAtIndex:0] objectAtIndex:0] intValue]] objectAtIndex:[[[relevantCircles objectAtIndex:0] objectAtIndex:1] intValue]];
+                            
+                            //if the current cell is a triangle:
                             if (isTriangle)
                             {
+                                //if the current cell is flipped, grab the slidePitchReference coefficient matrix for the mirror pixel.
                                 if (isFlipped)
                                 {
                                     slidePitchForCurrentPixel = [[slidePitchReference objectAtIndex:(((int) altitude)-horizontalPixelIndex)] objectAtIndex:verticalPixelIndex];
                                 }
+                                //if the current cell is not flipped, grab the slidePitchReference coefficient matrix for the current pixel.
                                 else
                                 {
                                     slidePitchForCurrentPixel = [[slidePitchReference objectAtIndex:horizontalPixelIndex] objectAtIndex:verticalPixelIndex];
                                 }
+                                
+                                //because the current cell is a triangle, relevantCircles must have three objects. assign the second and third elements (of type MAGCircle) to c2 and c3
                                 c2 = [[self.circleArray objectAtIndex:[[[relevantCircles objectAtIndex:1] objectAtIndex:0] intValue]] objectAtIndex:[[[relevantCircles objectAtIndex:1] objectAtIndex:1] intValue]];
                                 c3 = [[self.circleArray objectAtIndex:[[[relevantCircles objectAtIndex:2] objectAtIndex:0] intValue]] objectAtIndex:[[[relevantCircles objectAtIndex:2] objectAtIndex:1] intValue]];
+                                
+                                //grab the coefficients stored in slidePitchForCurrentPixel, assign to new variables
                                 p1Coefficient = [[slidePitchForCurrentPixel objectAtIndex:0] floatValue];
                                 p2Coefficient = [[slidePitchForCurrentPixel objectAtIndex:1] floatValue];
                                 p3Coefficient = [[slidePitchForCurrentPixel objectAtIndex:2] floatValue];
+                                
+                                //calculate the pitch of the current pixel with the following formula:
                                 tempPitch = (c1.pitch.floatValue*p1Coefficient + c2.pitch.floatValue*p2Coefficient + c3.pitch.floatValue*p3Coefficient)/(p1Coefficient+p2Coefficient+p3Coefficient);
                             }
+                            
+                            //if it's not a triangle, assign this pixel the same pitch as the that of the circle containing it.
                             else
                             {
                                 tempPitch = c1.pitch.floatValue;
                             }
+                            
+                            //store the pitch for this pixel in futurePitchMap at the location [pixel's horizontal position on the screen][pixel's vertical position on the screen]
                             [[futurePitchMap objectAtIndex:tempHorizontalIndex] replaceObjectAtIndex:tempVerticalIndex withObject:[NSNumber numberWithFloat:tempPitch]];
                         }
                     }
                 }
                 
-                //empty the array
+                //empty the array of relevant circles because the process is about to be repeated for a new pixel
                 [relevantCircles removeAllObjects];
             }
         }
