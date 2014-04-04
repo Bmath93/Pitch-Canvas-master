@@ -15,13 +15,13 @@
 
 @synthesize pitchMap = _pitchMap;
 
-- (id)initWithRadius:(float)circleRadius andPitch:(float)startingPitch andShift:(int)shift
+- (id)initWithRadius:(float)circleRadius andPitch:(float)startingPitch andShift:(int)shift andMultipleKeys: (int)multipleKeys
 {
-    NSLog(@"initializing a MAGCircleArray");
+    //NSLog(@"initializing a MAGCircleArray");
     self = [super init];
     
     //string used to check the user preferences
-    NSString *keyString = [NSString stringWithFormat:@"pitchMapWithRadius%fandStartingPitch%fandShift:%i",circleRadius,startingPitch,shift];
+    NSString *keyString = [NSString stringWithFormat:@"pitchMapWithRadius%fandStartingPitch%fandShift:%iandMultipleKeys%i",circleRadius,startingPitch,shift,multipleKeys];
     
     //initializing self.circleArray
     //will be a two-dimensional matrix of circles
@@ -56,7 +56,7 @@
     NSNumber *currentPitch = [NSNumber numberWithFloat:0.0];
     while (currentCenter.x < 768+circleRadius*2.0)
     {
-        NSLog(@"%f",currentCenter.x/(2.0*altitude));
+        //NSLog(@"%f",currentCenter.x/(2.0*altitude));
         //create a new array for this column of circles
         NSMutableArray *columnCircles = [[NSMutableArray alloc] init];
         
@@ -91,7 +91,7 @@
             pitchBase = startingPitch;
             
             //enable mulitple scales
-                if ( (int )(currentCenter.x/(2.0*altitude)) != 1 )
+                if ( (multipleKeys == 1) && ((int )(currentCenter.x/(2.0*altitude)) != 1) )
                 {
                     //sharp the fourth to change the key
                     [aboveScreenPitches replaceObjectAtIndex:aspFourthIndex withObject:[NSNumber numberWithFloat:[[aboveScreenPitches objectAtIndex:aspFourthIndex] floatValue] + 1.0]];
@@ -120,29 +120,11 @@
         }
     }
     _circleArray = [[NSArray alloc] initWithArray:futureCircles];
-    NSLog(@"initialized self.circleArray");
+    //NSLog(@"initialized self.circleArray");
     //NSLog(@"self.circleArray.count: %i",self.circleArray.count);
     //NSLog(@"self.circleArray[0].count: %i",[[self.circleArray objectAtIndex:0] count]);
     //NSLog(@"self.circleArray[1].count: %i",[[self.circleArray objectAtIndex:1] count]);
     //NSLog(@"currentPitch: %f, circleRadius: %f",[[[[futureCircles objectAtIndex:0] objectAtIndex:0] pitch] floatValue],[[[[futureCircles lastObject] lastObject] radius] floatValue]);
-
-    /*
-     
-     NSArray *oldArray = [prefs objectForKey:@"savedArray"];
-     self.savedLabel.text = [oldArray objectAtIndex:0];
-     //NSLog([prefs objectForKey:@"savedString"]);
-     
-     self.userName = self.textField.text;
-     
-     NSString *nameString = self.userName;
-     if ([nameString length] == 0) {
-     nameString = @"World";
-     }
-     NSString *greeting = [[NSString alloc] initWithFormat: @"Hello, %@!", nameString];
-     self.label.text = greeting;
-     [prefs setObject:[[NSArray alloc] initWithObjects:nameString, nil] forKey:@"savedArray"];
-     //NSLog(@"Done");
-     */
     
     NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
     NSString *previousMapKey = [prefs stringForKey:@"previous map"];
@@ -386,12 +368,12 @@
                 [relevantCircles removeAllObjects];
             }
         }
-        NSLog(@"saving the pitchMap");
+        //NSLog(@"saving the pitchMap");
         thePitchMap = futurePitchMap;
         [prefs setObject:keyString forKey:@"previous map"];
         [prefs setObject:thePitchMap forKey:keyString];
         [prefs synchronize];
-        NSLog(@"finished saving pitchMap");
+        //NSLog(@"finished saving pitchMap");
     }
     
     _pitchMap = [[NSArray alloc] initWithArray:thePitchMap];

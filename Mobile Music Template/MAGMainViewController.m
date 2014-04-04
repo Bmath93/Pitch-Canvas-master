@@ -19,6 +19,8 @@
 
 @property (weak, nonatomic) IBOutlet UISegmentedControl *sizeSwitch;
 
+@property (weak, nonatomic) IBOutlet UISegmentedControl *multipleKeySwitch;
+
 - (IBAction)loadCanvas;
 
 - (IBAction)loadTandemCanvas:(id)sender;
@@ -64,6 +66,7 @@
         [segue.destinationViewController setBaseKey:([self.keySwitch selectedSegmentIndex] + 45 + (12 * [self.baseRange selectedSegmentIndex]))];
         [segue.destinationViewController setCircleSize:([self.sizeSwitch selectedSegmentIndex]*50.0 + 50.0)];
         [segue.destinationViewController setShift:([self.shiftSwitch selectedSegmentIndex])];
+        [segue.destinationViewController setMultipleKeys:([self.multipleKeySwitch selectedSegmentIndex])];
     }
 }
 

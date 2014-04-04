@@ -29,9 +29,11 @@
     return self;
 }
 
+/*
+ //this method not called
 - (float)distanceFromSample:(CGPoint)aPoint
 {
     return sqrt( pow(self.location.x-aPoint.x,2) + pow(self.location.y-aPoint.y,2) );
 }
-
+*/
 @end

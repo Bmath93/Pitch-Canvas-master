@@ -12,7 +12,8 @@
 
 - (id)initWithLocation:(CGPoint)sampleLocation andTime:(NSDate *)sampleTime andFirstSample:(BOOL)wasFirstSample andLastSample:(BOOL)wasLastSample;
 
-- (float)distanceFromSample:(CGPoint)aPoint;
+//method not called
+//- (float)distanceFromSample:(CGPoint)aPoint;
 
 @property (strong,nonatomic) NSDate *time;
 

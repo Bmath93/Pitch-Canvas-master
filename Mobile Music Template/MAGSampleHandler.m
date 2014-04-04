@@ -28,7 +28,6 @@
     return self;
 }
 
-//- (int)handleFirstSample:(MAGSample *)firstSample withAudioChannel:(int)channelNumber
 - (NSArray *)handleFirstSample:(MAGSample *)firstSample
 {
     //ensure that the sample it recieved was a first sample

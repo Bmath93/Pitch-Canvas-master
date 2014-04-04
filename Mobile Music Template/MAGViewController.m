@@ -64,6 +64,7 @@ void overdrive_tilde_setup();
 @synthesize baseKey =_baseKey;
 @synthesize shift = _shift;
 @synthesize circleSize = _circleSize;
+@synthesize multipleKeys = _multipleKeys;
 
 - (void)viewDidLoad
 {
@@ -121,7 +122,6 @@ void overdrive_tilde_setup();
             [[self navigationController] popViewControllerAnimated:YES];
         }
     }
-    // NSLog(@"WHATTTT?????");
 }
 
 - (IBAction)backToSetup:(UIButton *)sender {
@@ -130,7 +130,7 @@ void overdrive_tilde_setup();
 
 - (void)initializeAttributes
 {
-    self.circles = [[MAGCircleArray alloc] initWithRadius:self.circleSize andPitch:self.baseKey andShift:self.shift];
+    self.circles = [[MAGCircleArray alloc] initWithRadius:self.circleSize andPitch:self.baseKey andShift:self.shift andMultipleKeys:self.multipleKeys];
     //NSLog(@"self.circles loaded");
     self.sampleHandler = [[MAGSampleHandler alloc] initEmptyArrayWithCircles:self.circles];
     //NSLog(@"self.sampleHandler loaded");
