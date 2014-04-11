@@ -17,7 +17,6 @@
 - (id)initWithCenterX:(float)x1 CenterY:(float)y1 Radius:(float)r Pitch:(float)p
 {
     self = [super init];
-    
     if(self)
     {
         _center = CGPointMake(x1,y1);
