@@ -1,7 +1,7 @@
 #N canvas 478 22 442 237 10;
 #X obj 59 -28 inlet;
 #X obj 255 -27 inlet;
-#X obj 226 162 outlet~;
+#X obj 244 160 outlet~;
 #N canvas 37 216 403 445 main_sound 1;
 #X obj 67 8 inlet;
 #X obj 129 413 outlet~;
@@ -139,7 +139,7 @@
 #X obj 302 94 + 80;
 #X obj 343 66 * -100;
 #X obj 343 93 + 100;
-#X obj 226 131 rev2~ 100 95 3000 50;
+#X obj 244 128 rev2~ 100 95 3000 50;
 #X connect 0 0 4 0;
 #X connect 1 0 5 0;
 #X connect 3 0 15 0;

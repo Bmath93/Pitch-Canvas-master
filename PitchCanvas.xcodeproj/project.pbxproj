@@ -7,8 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		33CEFC3018DCB9F80079E686 /* libVVBasics.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 33CEFC2B18DCB9A20079E686 /* libVVBasics.a */; };
-		33CEFC3118DCBA050079E686 /* libVVOSC.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 33CEFC2D18DCB9A20079E686 /* libVVOSC.a */; };
+		3376AB7618F8A1AD004F72CC /* MAGTandemSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3376AB7518F8A1AD004F72CC /* MAGTandemSettingsViewController.m */; };
 		33FF575318E5EA300052A226 /* MAGAnotherCanvas.m in Sources */ = {isa = PBXBuildFile; fileRef = 33FF575218E5EA300052A226 /* MAGAnotherCanvas.m */; };
 		3715B943162F23330026E296 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3715B942162F23330026E296 /* UIKit.framework */; };
 		3715B945162F23330026E296 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3715B944162F23330026E296 /* Foundation.framework */; };
@@ -85,97 +84,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		33CEFC1618DCB9A20079E686 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 33CEFC0418DCB9A20079E686 /* VVOpenSource.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 961EA8ED100E8565007E6C25;
-			remoteInfo = VVBasics;
-		};
-		33CEFC1818DCB9A20079E686 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 33CEFC0418DCB9A20079E686 /* VVOpenSource.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 96B06C1C18BE0ECF000A921C;
-			remoteInfo = VVUIToolbox;
-		};
-		33CEFC1A18DCB9A20079E686 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 33CEFC0418DCB9A20079E686 /* VVOpenSource.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 961745F4100F86B400FB60E6;
-			remoteInfo = VVMIDI;
-		};
-		33CEFC1C18DCB9A20079E686 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 33CEFC0418DCB9A20079E686 /* VVOpenSource.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 9628D0C5100E89F700C3944E;
-			remoteInfo = VVOSC;
-		};
-		33CEFC1E18DCB9A20079E686 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 33CEFC0418DCB9A20079E686 /* VVOpenSource.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 968FAA86108B6141000E470D;
-			remoteInfo = CrashReporterTestApp;
-		};
-		33CEFC2018DCB9A20079E686 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 33CEFC0418DCB9A20079E686 /* VVOpenSource.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 9656D900100F89BA0064EEA6;
-			remoteInfo = MIDITestApp;
-		};
-		33CEFC2218DCB9A20079E686 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 33CEFC0418DCB9A20079E686 /* VVOpenSource.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 9628D179100E8B4D00C3944E;
-			remoteInfo = OSCTestApp;
-		};
-		33CEFC2418DCB9A20079E686 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 33CEFC0418DCB9A20079E686 /* VVOpenSource.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 96B49302106AEB4C008FB26E;
-			remoteInfo = MIDIviaOSC;
-		};
-		33CEFC2618DCB9A20079E686 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 33CEFC0418DCB9A20079E686 /* VVOpenSource.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 966CCBD81431EFB9006D580F;
-			remoteInfo = OSCQueryTest;
-		};
-		33CEFC2818DCB9A20079E686 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 33CEFC0418DCB9A20079E686 /* VVOpenSource.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 96ACD7211706416300138AE6;
-			remoteInfo = OSCPingTester;
-		};
-		33CEFC2A18DCB9A20079E686 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 33CEFC0418DCB9A20079E686 /* VVOpenSource.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 96C18C2D185A1A740082DE35;
-			remoteInfo = VVBasicsStatic;
-		};
-		33CEFC2C18DCB9A20079E686 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 33CEFC0418DCB9A20079E686 /* VVOpenSource.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 96C18C3E185A1A7D0082DE35;
-			remoteInfo = VVOSCStatic;
-		};
-		33CEFC2E18DCB9D90079E686 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 33CEFC0418DCB9A20079E686 /* VVOpenSource.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 968A7EEB185BA3100075DEB1;
-			remoteInfo = "Build iOS static libs";
-		};
 		3715B96D162F23330026E296 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 3715B935162F23330026E296 /* Project object */;
@@ -207,7 +115,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		33CEFC0418DCB9A20079E686 /* VVOpenSource.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = VVOpenSource.xcodeproj; path = "../Downloads/vvopensource-master/VVOpenSource.xcodeproj"; sourceTree = "<group>"; };
+		3376AB7418F8A1AD004F72CC /* MAGTandemSettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MAGTandemSettingsViewController.h; sourceTree = "<group>"; };
+		3376AB7518F8A1AD004F72CC /* MAGTandemSettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MAGTandemSettingsViewController.m; sourceTree = "<group>"; };
 		33FF575118E5EA300052A226 /* MAGAnotherCanvas.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MAGAnotherCanvas.h; sourceTree = "<group>"; };
 		33FF575218E5EA300052A226 /* MAGAnotherCanvas.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MAGAnotherCanvas.m; sourceTree = "<group>"; };
 		3715B93E162F23330026E296 /* PitchCanvas.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PitchCanvas.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -297,8 +206,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				33CEFC3118DCBA050079E686 /* libVVOSC.a in Frameworks */,
-				33CEFC3018DCB9F80079E686 /* libVVBasics.a in Frameworks */,
 				3715B9A4162F42CD0026E296 /* AVFoundation.framework in Frameworks */,
 				3715B9A2162F42C70026E296 /* AudioToolbox.framework in Frameworks */,
 				3715B993162F2F540026E296 /* libpd-ios.a in Frameworks */,
@@ -321,25 +228,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		33CEFC0518DCB9A20079E686 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				33CEFC1718DCB9A20079E686 /* VVBasics.framework */,
-				33CEFC1918DCB9A20079E686 /* VVUIToolbox.framework */,
-				33CEFC1B18DCB9A20079E686 /* VVMIDI.framework */,
-				33CEFC1D18DCB9A20079E686 /* VVOSC.framework */,
-				33CEFC1F18DCB9A20079E686 /* CrashReporterTestApp.app */,
-				33CEFC2118DCB9A20079E686 /* MIDITestApp.app */,
-				33CEFC2318DCB9A20079E686 /* OSCTestApp.app */,
-				33CEFC2518DCB9A20079E686 /* MIDIviaOSC.app */,
-				33CEFC2718DCB9A20079E686 /* OSCQueryTest.app */,
-				33CEFC2918DCB9A20079E686 /* OSCPingTester.app */,
-				33CEFC2B18DCB9A20079E686 /* libVVBasics.a */,
-				33CEFC2D18DCB9A20079E686 /* libVVOSC.a */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
 		3715B933162F23330026E296 = {
 			isa = PBXGroup;
 			children = (
@@ -351,7 +239,6 @@
 				3715B96F162F23330026E296 /* Mobile Music TemplateTests */,
 				3715B941162F23330026E296 /* Frameworks */,
 				3715B93F162F23330026E296 /* Products */,
-				33CEFC0418DCB9A20079E686 /* VVOpenSource.xcodeproj */,
 			);
 			sourceTree = "<group>";
 		};
@@ -394,6 +281,8 @@
 				3A8956301799BEF000788E9D /* MAGMainViewController.m */,
 				3715B960162F23330026E296 /* MAGViewController.h */,
 				3715B961162F23330026E296 /* MAGViewController.m */,
+				3376AB7418F8A1AD004F72CC /* MAGTandemSettingsViewController.h */,
+				3376AB7518F8A1AD004F72CC /* MAGTandemSettingsViewController.m */,
 				3A9C0FAE17835E4A00221F62 /* MAGBackground.h */,
 				3A9C0FAF17835E4A00221F62 /* MAGBackground.m */,
 				3A8937821785F93D005AD710 /* MAGSampleHandler.h */,
@@ -524,7 +413,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				33CEFC2F18DCB9D90079E686 /* PBXTargetDependency */,
 				3715B992162F2F290026E296 /* PBXTargetDependency */,
 			);
 			name = PitchCanvas;
@@ -582,10 +470,6 @@
 					ProductGroup = 3715B985162F27620026E296 /* Products */;
 					ProjectRef = 3715B984162F27620026E296 /* libpd.xcodeproj */;
 				},
-				{
-					ProductGroup = 33CEFC0518DCB9A20079E686 /* Products */;
-					ProjectRef = 33CEFC0418DCB9A20079E686 /* VVOpenSource.xcodeproj */;
-				},
 			);
 			projectRoot = "";
 			targets = (
@@ -596,90 +480,6 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
-		33CEFC1718DCB9A20079E686 /* VVBasics.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = VVBasics.framework;
-			remoteRef = 33CEFC1618DCB9A20079E686 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		33CEFC1918DCB9A20079E686 /* VVUIToolbox.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = VVUIToolbox.framework;
-			remoteRef = 33CEFC1818DCB9A20079E686 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		33CEFC1B18DCB9A20079E686 /* VVMIDI.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = VVMIDI.framework;
-			remoteRef = 33CEFC1A18DCB9A20079E686 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		33CEFC1D18DCB9A20079E686 /* VVOSC.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = VVOSC.framework;
-			remoteRef = 33CEFC1C18DCB9A20079E686 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		33CEFC1F18DCB9A20079E686 /* CrashReporterTestApp.app */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.application;
-			path = CrashReporterTestApp.app;
-			remoteRef = 33CEFC1E18DCB9A20079E686 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		33CEFC2118DCB9A20079E686 /* MIDITestApp.app */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.application;
-			path = MIDITestApp.app;
-			remoteRef = 33CEFC2018DCB9A20079E686 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		33CEFC2318DCB9A20079E686 /* OSCTestApp.app */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.application;
-			path = OSCTestApp.app;
-			remoteRef = 33CEFC2218DCB9A20079E686 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		33CEFC2518DCB9A20079E686 /* MIDIviaOSC.app */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.application;
-			path = MIDIviaOSC.app;
-			remoteRef = 33CEFC2418DCB9A20079E686 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		33CEFC2718DCB9A20079E686 /* OSCQueryTest.app */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.application;
-			path = OSCQueryTest.app;
-			remoteRef = 33CEFC2618DCB9A20079E686 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		33CEFC2918DCB9A20079E686 /* OSCPingTester.app */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.application;
-			path = OSCPingTester.app;
-			remoteRef = 33CEFC2818DCB9A20079E686 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		33CEFC2B18DCB9A20079E686 /* libVVBasics.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = libVVBasics.a;
-			remoteRef = 33CEFC2A18DCB9A20079E686 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		33CEFC2D18DCB9A20079E686 /* libVVOSC.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = libVVOSC.a;
-			remoteRef = 33CEFC2C18DCB9A20079E686 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
 		3715B98D162F27620026E296 /* libpd-ios.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
@@ -782,6 +582,7 @@
 				3AB75F8D17AAC502007A6A62 /* m_pd.c in Sources */,
 				37600CA7180BA10000934FE2 /* MAGInfoViewController.m in Sources */,
 				3AB75F8E17AAC506007A6A62 /* m_pd.h in Sources */,
+				3376AB7618F8A1AD004F72CC /* MAGTandemSettingsViewController.m in Sources */,
 				3AB75F8F17AAC509007A6A62 /* shared.c in Sources */,
 				3AB75F9017AAC50C007A6A62 /* shared.h in Sources */,
 				3AB75F9117AAC50F007A6A62 /* sic.c in Sources */,
@@ -811,11 +612,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		33CEFC2F18DCB9D90079E686 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = "Build iOS static libs";
-			targetProxy = 33CEFC2E18DCB9D90079E686 /* PBXContainerItemProxy */;
-		};
 		3715B96E162F23330026E296 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 3715B93D162F23330026E296 /* PitchCanvas */;

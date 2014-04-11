@@ -23,8 +23,6 @@
 
 - (IBAction)loadCanvas;
 
-- (IBAction)loadTandemCanvas:(id)sender;
-
 @end
 
 @implementation MAGMainViewController
@@ -49,14 +47,13 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+- (IBAction)loadLastView:(id)sender {
+    [self.navigationController popToRootViewControllerAnimated:YES];
+}
 
 - (IBAction)loadCanvas
 {
     [self performSegueWithIdentifier:@"loadCanvas" sender:self];
-}
-
-- (IBAction)loadTandemCanvas:(id)sender {
-    [self performSegueWithIdentifier:@"loadTandemCanvas1" sender:self];
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender

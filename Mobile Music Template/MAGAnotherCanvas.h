@@ -7,7 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+//#import "F53OSC.h"
 
 @interface MAGAnotherCanvas : UIViewController
+
+//@interface MAGAnotherCanvas : UIViewController <F53OSCPacketDestination>
+
+@property int userPort;
+
+@property NSString *userAddress;
 
 @end

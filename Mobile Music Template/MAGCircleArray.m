@@ -50,7 +50,9 @@
     NSMutableArray *futureCircles = [[NSMutableArray alloc] init];
     CGPoint currentCenter = CGPointMake(0.0, circleRadius/2.0);
     
+    if (multipleKeys == 1){startingPitch = startingPitch + 17.0; shift = shift + 5;}
     int pitchCounter = shift;
+    int circleColumn = 0;
     //int shiftCounter = 1;
     float pitchBase = startingPitch;
     NSNumber *currentPitch = [NSNumber numberWithFloat:0.0];
@@ -89,9 +91,11 @@
             currentCenter.y = -circleRadius/2.0;
             pitchCounter = shift;
             pitchBase = startingPitch;
+            circleColumn = (int )(currentCenter.x/(2.0*altitude));
+            //NSLog(@"%i",circleColumn);
             
             //enable mulitple scales
-                if ( (multipleKeys == 1) && ((int )(currentCenter.x/(2.0*altitude)) != 1) )
+                if ( (multipleKeys == 1) && ((circleColumn == 3) || (circleColumn ==7)) )
                 {
                     //sharp the fourth to change the key
                     [aboveScreenPitches replaceObjectAtIndex:aspFourthIndex withObject:[NSNumber numberWithFloat:[[aboveScreenPitches objectAtIndex:aspFourthIndex] floatValue] + 1.0]];
