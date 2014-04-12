@@ -23,4 +23,6 @@
 
 - (NSArray *)addSample:(MAGSample *)newSample;
 
+- (id) initFromArray:(NSArray *)gestureArray;
+
 @end

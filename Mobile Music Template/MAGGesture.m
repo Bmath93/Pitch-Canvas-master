@@ -32,6 +32,11 @@
     return self;
 }
 
+- (id) initFromArray:(NSArray *)gestureArray{
+    self = [super init];
+    return self;
+}
+
 -(NSArray *)addSample:(MAGSample *)newSample
 {
     if (!self.hasEnded)
