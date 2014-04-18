@@ -7,13 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "PdDispatcher.h"
 #import "MAGCircle.h"
+#import "MAGPdButler.h"
 
-@interface MAGViewController : UIViewController {
-    PdDispatcher *dispatcher;
-    void *patch;
-}
+@interface MAGViewController : UIViewController
+
+@property MAGPdButler *pdButler;
 
 @property float baseKey;
 

@@ -18,9 +18,6 @@
 @end
 
 @implementation MAGTandemSettingsViewController
-- (IBAction)loadTandemCanvas:(id)sender {
-    //[self performSegueWithIdentifier:@"loadTandemCanvas" sender:self];
-}
 
 - (IBAction)loadLastView:(id)sender {
     [self.navigationController popToRootViewControllerAnimated:YES];

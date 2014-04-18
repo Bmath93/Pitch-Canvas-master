@@ -65,20 +65,21 @@ void overdrive_tilde_setup();
 @synthesize shift = _shift;
 @synthesize circleSize = _circleSize;
 @synthesize multipleKeys = _multipleKeys;
+@synthesize pdButler;
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
 	
     // _________________ LOAD Pd Patch ____________________
-    dispatcher = [[PdDispatcher alloc] init];
+    /*dispatcher = [[PdDispatcher alloc] init];
     [PdBase setDelegate:dispatcher];
     //triangle_tilde_setup();
     overdrive_tilde_setup();
     patch = [PdBase openFile:@"mag_template.pd" path:[[NSBundle mainBundle] resourcePath]];
     if (!patch) {
         NSLog(@"Failed to open patch!");
-    }
+    }*/
     
     NSLog(@"loading view");
     self.isChannel1Open = TRUE;
@@ -160,6 +161,8 @@ void overdrive_tilde_setup();
                 {
                     CFArraySetValueAtIndex(self.liveTouches, 0, (__bridge const void *)(touch));
                     
+                    
+                    
                     MAGSample *newSample = [[MAGSample alloc] initWithLocation:[touch locationInView:touch.view]
                                                                        andTime:[[NSDate alloc] init]
                                                                 andFirstSample:TRUE
@@ -168,9 +171,13 @@ void overdrive_tilde_setup();
                     int newGestureIndex = [[audioAndIndex lastObject] intValue];
                     [self.liveGestureIndeces replaceObjectAtIndex:0 withObject:[NSNumber numberWithInt:newGestureIndex]];
                     
-                    [PdBase sendFloat:[audioAndIndex[0] floatValue] toReceiver:@"freq1"];
-                    [PdBase sendFloat:[audioAndIndex[1] floatValue] toReceiver:@"gain1"];
-                    [PdBase sendFloat:[audioAndIndex[2] floatValue] toReceiver:@"rev1"];
+                    [self.pdButler sendFloat:[audioAndIndex[0] floatValue] toReceiver:@"freq1"];
+                    [self.pdButler sendFloat:[audioAndIndex[1] floatValue] toReceiver:@"gain1"];
+                    [self.pdButler sendFloat:[audioAndIndex[2] floatValue] toReceiver:@"rev1"];
+                    
+                    //[PdBase sendFloat:[audioAndIndex[0] floatValue] toReceiver:@"freq1"];
+                    //[PdBase sendFloat:[audioAndIndex[1] floatValue] toReceiver:@"gain1"];
+                    //[PdBase sendFloat:[audioAndIndex[2] floatValue] toReceiver:@"rev1"];
                     self.isChannel1Open = FALSE;
                     //NSLog(@"added gesture to channel 1.  gesture index: %i",newGestureIndex);
                     //NSLog(@"liveGestureIndeces: = [%i,%i,%i,%i,%i,%i,%i,%i]",[self.liveGestureIndeces[0] intValue],[self.liveGestureIndeces[1] intValue],[self.liveGestureIndeces[2] intValue],[self.liveGestureIndeces[3] intValue],[self.liveGestureIndeces[4] intValue],[self.liveGestureIndeces[5] intValue],[self.liveGestureIndeces[6] intValue],[self.liveGestureIndeces[7] intValue]);
@@ -187,9 +194,14 @@ void overdrive_tilde_setup();
                     int newGestureIndex = [[audioAndIndex lastObject] intValue];
                     [self.liveGestureIndeces replaceObjectAtIndex:1 withObject:[NSNumber numberWithInt:newGestureIndex]];
                     
-                    [PdBase sendFloat:[audioAndIndex[0] floatValue] toReceiver:@"freq2"];
+                    [self.pdButler sendFloat:[audioAndIndex[0] floatValue] toReceiver:@"freq2"];
+                    [self.pdButler sendFloat:[audioAndIndex[1] floatValue] toReceiver:@"gain2"];
+                    [self.pdButler sendFloat:[audioAndIndex[2] floatValue] toReceiver:@"rev2"];
+                    
+                    /*[PdBase sendFloat:[audioAndIndex[0] floatValue] toReceiver:@"freq2"];
                     [PdBase sendFloat:[audioAndIndex[1] floatValue] toReceiver:@"gain2"];
-                    [PdBase sendFloat:[audioAndIndex[2] floatValue] toReceiver:@"rev2"];
+                    [PdBase sendFloat:[audioAndIndex[2] floatValue] toReceiver:@"rev2"];*/
+                    
                     //NSLog(@"freq2: %f, gain2: %f",[pitchAndGainAndIndex[0] floatValue],[pitchAndGainAndIndex[1] floatValue]);
                     self.isChannel2Open = FALSE;
                     //NSLog(@"adding a gesture in channel 2.  gesture index: %i",newGestureIndex);
@@ -207,9 +219,14 @@ void overdrive_tilde_setup();
                     int newGestureIndex = [[audioAndIndex lastObject] intValue];
                     [self.liveGestureIndeces replaceObjectAtIndex:2 withObject:[NSNumber numberWithInt:newGestureIndex]];
                     
-                    [PdBase sendFloat:[audioAndIndex[0] floatValue] toReceiver:@"freq3"];
+                    [self.pdButler sendFloat:[audioAndIndex[0] floatValue] toReceiver:@"freq3"];
+                    [self.pdButler sendFloat:[audioAndIndex[1] floatValue] toReceiver:@"gain3"];
+                    [self.pdButler sendFloat:[audioAndIndex[2] floatValue] toReceiver:@"rev3"];
+                    
+                    /*[PdBase sendFloat:[audioAndIndex[0] floatValue] toReceiver:@"freq3"];
                     [PdBase sendFloat:[audioAndIndex[1] floatValue] toReceiver:@"gain3"];
-                    [PdBase sendFloat:[audioAndIndex[2] floatValue] toReceiver:@"rev3"];
+                    [PdBase sendFloat:[audioAndIndex[2] floatValue] toReceiver:@"rev3"];*/
+                    
                     self.isChannel3Open = FALSE;
                     //NSLog(@"adding a gesture in channel 3.  gesture index: %i",newGestureIndex);
                     //NSLog(@"liveGestureIndeces: = [%i,%i,%i,%i,%i,%i,%i,%i]",[self.liveGestureIndeces[0] intValue],[self.liveGestureIndeces[1] intValue],[self.liveGestureIndeces[2] intValue],[self.liveGestureIndeces[3] intValue],[self.liveGestureIndeces[4] intValue],[self.liveGestureIndeces[5] intValue],[self.liveGestureIndeces[6] intValue],[self.liveGestureIndeces[7] intValue]);
@@ -226,9 +243,14 @@ void overdrive_tilde_setup();
                     int newGestureIndex = [[audioAndIndex lastObject] intValue];
                     [self.liveGestureIndeces replaceObjectAtIndex:3 withObject:[NSNumber numberWithInt:newGestureIndex]];
                     
-                    [PdBase sendFloat:[audioAndIndex[0] floatValue] toReceiver:@"freq4"];
+                    [self.pdButler sendFloat:[audioAndIndex[0] floatValue] toReceiver:@"freq4"];
+                    [self.pdButler sendFloat:[audioAndIndex[1] floatValue] toReceiver:@"gain4"];
+                    [self.pdButler sendFloat:[audioAndIndex[2] floatValue] toReceiver:@"rev4"];
+                    
+                    /*[PdBase sendFloat:[audioAndIndex[0] floatValue] toReceiver:@"freq4"];
                     [PdBase sendFloat:[audioAndIndex[1] floatValue] toReceiver:@"gain4"];
-                    [PdBase sendFloat:[audioAndIndex[2] floatValue] toReceiver:@"rev4"];
+                    [PdBase sendFloat:[audioAndIndex[2] floatValue] toReceiver:@"rev4"];*/
+                    
                     self.isChannel4Open = FALSE;
                     //NSLog(@"adding a gesture in channel 4.  gesture index: %i",newGestureIndex);
                     //NSLog(@"liveGestureIndeces: = [%i,%i,%i,%i,%i,%i,%i,%i]",[self.liveGestureIndeces[0] intValue],[self.liveGestureIndeces[1] intValue],[self.liveGestureIndeces[2] intValue],[self.liveGestureIndeces[3] intValue],[self.liveGestureIndeces[4] intValue],[self.liveGestureIndeces[5] intValue],[self.liveGestureIndeces[6] intValue],[self.liveGestureIndeces[7] intValue]);
@@ -245,9 +267,14 @@ void overdrive_tilde_setup();
                     int newGestureIndex = [[audioAndIndex lastObject] intValue];
                     [self.liveGestureIndeces replaceObjectAtIndex:4 withObject:[NSNumber numberWithInt:newGestureIndex]];
                     
-                    [PdBase sendFloat:[audioAndIndex[0] floatValue] toReceiver:@"freq5"];
+                    [self.pdButler sendFloat:[audioAndIndex[0] floatValue] toReceiver:@"freq5"];
+                    [self.pdButler sendFloat:[audioAndIndex[1] floatValue] toReceiver:@"gain5"];
+                    [self.pdButler sendFloat:[audioAndIndex[2] floatValue] toReceiver:@"rev5"];
+                    
+                    /*[PdBase sendFloat:[audioAndIndex[0] floatValue] toReceiver:@"freq5"];
                     [PdBase sendFloat:[audioAndIndex[1] floatValue] toReceiver:@"gain5"];
-                    [PdBase sendFloat:[audioAndIndex[2] floatValue] toReceiver:@"rev5"];
+                    [PdBase sendFloat:[audioAndIndex[2] floatValue] toReceiver:@"rev5"];*/
+                    
                     self.isChannel5Open = FALSE;
                     //NSLog(@"adding a gesture in channel 5.  gesture index: %i",newGestureIndex);
                     //NSLog(@"liveGestureIndeces: = [%i,%i,%i,%i,%i,%i,%i,%i]",[self.liveGestureIndeces[0] intValue],[self.liveGestureIndeces[1] intValue],[self.liveGestureIndeces[2] intValue],[self.liveGestureIndeces[3] intValue],[self.liveGestureIndeces[4] intValue],[self.liveGestureIndeces[5] intValue],[self.liveGestureIndeces[6] intValue],[self.liveGestureIndeces[7] intValue]);
@@ -264,9 +291,14 @@ void overdrive_tilde_setup();
                     int newGestureIndex = [[audioAndIndex lastObject] intValue];
                     [self.liveGestureIndeces replaceObjectAtIndex:5 withObject:[NSNumber numberWithInt:newGestureIndex]];
                     
-                    [PdBase sendFloat:[audioAndIndex[0] floatValue] toReceiver:@"freq6"];
+                    [self.pdButler sendFloat:[audioAndIndex[0] floatValue] toReceiver:@"freq6"];
+                    [self.pdButler sendFloat:[audioAndIndex[1] floatValue] toReceiver:@"gain6"];
+                    [self.pdButler sendFloat:[audioAndIndex[2] floatValue] toReceiver:@"rev6"];
+                    
+                    /*[PdBase sendFloat:[audioAndIndex[0] floatValue] toReceiver:@"freq6"];
                     [PdBase sendFloat:[audioAndIndex[1] floatValue] toReceiver:@"gain6"];
-                    [PdBase sendFloat:[audioAndIndex[2] floatValue] toReceiver:@"rev6"];
+                    [PdBase sendFloat:[audioAndIndex[2] floatValue] toReceiver:@"rev6"];*/
+                    
                     self.isChannel6Open = FALSE;
                     //NSLog(@"adding a gesture in channel 6.  gesture index: %i",newGestureIndex);
                     //NSLog(@"liveGestureIndeces: = [%i,%i,%i,%i,%i,%i,%i,%i]",[self.liveGestureIndeces[0] intValue],[self.liveGestureIndeces[1] intValue],[self.liveGestureIndeces[2] intValue],[self.liveGestureIndeces[3] intValue],[self.liveGestureIndeces[4] intValue],[self.liveGestureIndeces[5] intValue],[self.liveGestureIndeces[6] intValue],[self.liveGestureIndeces[7] intValue]);
@@ -283,9 +315,14 @@ void overdrive_tilde_setup();
                     int newGestureIndex = [[audioAndIndex lastObject] intValue];
                     [self.liveGestureIndeces replaceObjectAtIndex:6 withObject:[NSNumber numberWithInt:newGestureIndex]];
                     
-                    [PdBase sendFloat:[audioAndIndex[0] floatValue] toReceiver:@"freq7"];
+                    [self.pdButler sendFloat:[audioAndIndex[0] floatValue] toReceiver:@"freq7"];
+                    [self.pdButler sendFloat:[audioAndIndex[1] floatValue] toReceiver:@"gain7"];
+                    [self.pdButler sendFloat:[audioAndIndex[2] floatValue] toReceiver:@"rev7"];
+                    
+                    /*[PdBase sendFloat:[audioAndIndex[0] floatValue] toReceiver:@"freq7"];
                     [PdBase sendFloat:[audioAndIndex[1] floatValue] toReceiver:@"gain7"];
-                    [PdBase sendFloat:[audioAndIndex[2] floatValue] toReceiver:@"rev7"];
+                    [PdBase sendFloat:[audioAndIndex[2] floatValue] toReceiver:@"rev7"];*/
+                    
                     self.isChannel7Open = FALSE;
                     //NSLog(@"adding a gesture in channel 7.  gesture index: %i",newGestureIndex);
                     //NSLog(@"liveGestureIndeces: = [%i,%i,%i,%i,%i,%i,%i,%i]",[self.liveGestureIndeces[0] intValue],[self.liveGestureIndeces[1] intValue],[self.liveGestureIndeces[2] intValue],[self.liveGestureIndeces[3] intValue],[self.liveGestureIndeces[4] intValue],[self.liveGestureIndeces[5] intValue],[self.liveGestureIndeces[6] intValue],[self.liveGestureIndeces[7] intValue]);
@@ -302,9 +339,14 @@ void overdrive_tilde_setup();
                     int newGestureIndex = [[audioAndIndex lastObject] intValue];
                     [self.liveGestureIndeces replaceObjectAtIndex:7 withObject:[NSNumber numberWithInt:newGestureIndex]];
                     
-                    [PdBase sendFloat:[audioAndIndex[0] floatValue] toReceiver:@"freq8"];
+                    [self.pdButler sendFloat:[audioAndIndex[0] floatValue] toReceiver:@"freq8"];
+                    [self.pdButler sendFloat:[audioAndIndex[1] floatValue] toReceiver:@"gain8"];
+                    [self.pdButler sendFloat:[audioAndIndex[2] floatValue] toReceiver:@"rev8"];
+                    
+                    /*[PdBase sendFloat:[audioAndIndex[0] floatValue] toReceiver:@"freq8"];
                     [PdBase sendFloat:[audioAndIndex[1] floatValue] toReceiver:@"gain8"];
-                    [PdBase sendFloat:[audioAndIndex[2] floatValue] toReceiver:@"rev8"];
+                    [PdBase sendFloat:[audioAndIndex[2] floatValue] toReceiver:@"rev8"];*/
+                    
                     self.isChannel8Open = FALSE;
                     //NSLog(@"adding a gesture in channel 8.  gesture index: %i",newGestureIndex);
                     //NSLog(@"liveGestureIndeces: = [%i,%i,%i,%i,%i,%i,%i,%i]",[self.liveGestureIndeces[0] intValue],[self.liveGestureIndeces[1] intValue],[self.liveGestureIndeces[2] intValue],[self.liveGestureIndeces[3] intValue],[self.liveGestureIndeces[4] intValue],[self.liveGestureIndeces[5] intValue],[self.liveGestureIndeces[6] intValue],[self.liveGestureIndeces[7] intValue]);
@@ -343,9 +385,12 @@ void overdrive_tilde_setup();
                                                                    inGesture:[self.liveGestureIndeces[0] intValue]];
                     if (audioArray.count > 0)
                     {
-                        [PdBase sendFloat:[audioArray[0] floatValue] toReceiver:@"freq1"];
+                        [self.pdButler sendFloat:[audioArray[0] floatValue] toReceiver:@"freq1"];
+                        [self.pdButler sendFloat:[audioArray[1] floatValue] toReceiver:@"gain1"];
+                        [self.pdButler sendFloat:[audioArray[2] floatValue] toReceiver:@"rev1"];
+                        /*[PdBase sendFloat:[audioArray[0] floatValue] toReceiver:@"freq1"];
                         [PdBase sendFloat:[audioArray[1] floatValue] toReceiver:@"gain1"];
-                        [PdBase sendFloat:[audioArray[2] floatValue] toReceiver:@"rev1"];
+                        [PdBase sendFloat:[audioArray[2] floatValue] toReceiver:@"rev1"];*/
                     }
                 }
             }
@@ -365,9 +410,12 @@ void overdrive_tilde_setup();
                                                                    inGesture:[self.liveGestureIndeces[1] intValue]];
                     if (audioArray.count > 0)
                     {
-                        [PdBase sendFloat:[audioArray[0] floatValue] toReceiver:@"freq2"];
+                        [self.pdButler sendFloat:[audioArray[0] floatValue] toReceiver:@"freq2"];
+                        [self.pdButler sendFloat:[audioArray[1] floatValue] toReceiver:@"gain2"];
+                        [self.pdButler sendFloat:[audioArray[2] floatValue] toReceiver:@"rev2"];
+                        /*[PdBase sendFloat:[audioArray[0] floatValue] toReceiver:@"freq2"];
                         [PdBase sendFloat:[audioArray[1] floatValue] toReceiver:@"gain2"];
-                        [PdBase sendFloat:[audioArray[2] floatValue] toReceiver:@"rev2"];
+                        [PdBase sendFloat:[audioArray[2] floatValue] toReceiver:@"rev2"];*/
                     }
                 }
             }
@@ -387,9 +435,12 @@ void overdrive_tilde_setup();
                                                                    inGesture:[self.liveGestureIndeces[2] intValue]];
                     if (audioArray.count > 0)
                     {
-                        [PdBase sendFloat:[audioArray[0] floatValue] toReceiver:@"freq3"];
+                        [self.pdButler sendFloat:[audioArray[0] floatValue] toReceiver:@"freq3"];
+                        [self.pdButler sendFloat:[audioArray[1] floatValue] toReceiver:@"gain3"];
+                        [self.pdButler sendFloat:[audioArray[2] floatValue] toReceiver:@"rev3"];
+                        /*[PdBase sendFloat:[audioArray[0] floatValue] toReceiver:@"freq3"];
                         [PdBase sendFloat:[audioArray[1] floatValue] toReceiver:@"gain3"];
-                        [PdBase sendFloat:[audioArray[2] floatValue] toReceiver:@"rev3"];
+                        [PdBase sendFloat:[audioArray[2] floatValue] toReceiver:@"rev3"];*/
                     }
                 }
             }
@@ -409,9 +460,12 @@ void overdrive_tilde_setup();
                                                                    inGesture:[self.liveGestureIndeces[3] intValue]];
                     if (audioArray.count > 0)
                     {
-                        [PdBase sendFloat:[audioArray[0] floatValue] toReceiver:@"freq4"];
+                        [self.pdButler sendFloat:[audioArray[0] floatValue] toReceiver:@"freq4"];
+                        [self.pdButler sendFloat:[audioArray[1] floatValue] toReceiver:@"gain4"];
+                        [self.pdButler sendFloat:[audioArray[2] floatValue] toReceiver:@"rev4"];
+                        /*[PdBase sendFloat:[audioArray[0] floatValue] toReceiver:@"freq4"];
                         [PdBase sendFloat:[audioArray[1] floatValue] toReceiver:@"gain4"];
-                        [PdBase sendFloat:[audioArray[2] floatValue] toReceiver:@"rev4"];
+                        [PdBase sendFloat:[audioArray[2] floatValue] toReceiver:@"rev4"];*/
                     }
                 }
             }
@@ -431,9 +485,12 @@ void overdrive_tilde_setup();
                                                                    inGesture:[self.liveGestureIndeces[4] intValue]];
                     if (audioArray.count > 0)
                     {
-                        [PdBase sendFloat:[audioArray[0] floatValue] toReceiver:@"freq5"];
+                        [self.pdButler sendFloat:[audioArray[0] floatValue] toReceiver:@"freq5"];
+                        [self.pdButler sendFloat:[audioArray[1] floatValue] toReceiver:@"gain5"];
+                        [self.pdButler sendFloat:[audioArray[2] floatValue] toReceiver:@"rev5"];
+                        /*[PdBase sendFloat:[audioArray[0] floatValue] toReceiver:@"freq5"];
                         [PdBase sendFloat:[audioArray[1] floatValue] toReceiver:@"gain5"];
-                        [PdBase sendFloat:[audioArray[2] floatValue] toReceiver:@"rev5"];
+                        [PdBase sendFloat:[audioArray[2] floatValue] toReceiver:@"rev5"];*/
                     }
                 }
             }
@@ -453,9 +510,12 @@ void overdrive_tilde_setup();
                                                                    inGesture:[self.liveGestureIndeces[5] intValue]];
                     if (audioArray.count > 0)
                     {
-                        [PdBase sendFloat:[audioArray[0] floatValue] toReceiver:@"freq6"];
+                        [self.pdButler sendFloat:[audioArray[0] floatValue] toReceiver:@"freq6"];
+                        [self.pdButler sendFloat:[audioArray[1] floatValue] toReceiver:@"gain6"];
+                        [self.pdButler sendFloat:[audioArray[2] floatValue] toReceiver:@"rev6"];
+                        /*[PdBase sendFloat:[audioArray[0] floatValue] toReceiver:@"freq6"];
                         [PdBase sendFloat:[audioArray[1] floatValue] toReceiver:@"gain6"];
-                        [PdBase sendFloat:[audioArray[2] floatValue] toReceiver:@"rev6"];
+                        [PdBase sendFloat:[audioArray[2] floatValue] toReceiver:@"rev6"];*/
                     }
                 }
             }
@@ -475,9 +535,12 @@ void overdrive_tilde_setup();
                                                                    inGesture:[self.liveGestureIndeces[6] intValue]];
                     if (audioArray.count > 0)
                     {
-                        [PdBase sendFloat:[audioArray[0] floatValue] toReceiver:@"freq7"];
+                        [self.pdButler sendFloat:[audioArray[0] floatValue] toReceiver:@"freq7"];
+                        [self.pdButler sendFloat:[audioArray[1] floatValue] toReceiver:@"gain7"];
+                        [self.pdButler sendFloat:[audioArray[2] floatValue] toReceiver:@"rev7"];
+                        /*[PdBase sendFloat:[audioArray[0] floatValue] toReceiver:@"freq7"];
                         [PdBase sendFloat:[audioArray[1] floatValue] toReceiver:@"gain7"];
-                        [PdBase sendFloat:[audioArray[2] floatValue] toReceiver:@"rev7"];
+                        [PdBase sendFloat:[audioArray[2] floatValue] toReceiver:@"rev7"];*/
                     }
                 }
             }
@@ -497,9 +560,12 @@ void overdrive_tilde_setup();
                                                                    inGesture:[self.liveGestureIndeces[7] intValue]];
                     if (audioArray.count > 0)
                     {
-                        [PdBase sendFloat:[audioArray[0] floatValue] toReceiver:@"freq8"];
+                        [self.pdButler sendFloat:[audioArray[0] floatValue] toReceiver:@"freq8"];
+                        [self.pdButler sendFloat:[audioArray[1] floatValue] toReceiver:@"gain8"];
+                        [self.pdButler sendFloat:[audioArray[2] floatValue] toReceiver:@"rev8"];
+                        /*[PdBase sendFloat:[audioArray[0] floatValue] toReceiver:@"freq8"];
                         [PdBase sendFloat:[audioArray[1] floatValue] toReceiver:@"gain8"];
-                        [PdBase sendFloat:[audioArray[2] floatValue] toReceiver:@"rev8"];
+                        [PdBase sendFloat:[audioArray[2] floatValue] toReceiver:@"rev8"];*/
                     }
                 }
             }
@@ -533,7 +599,8 @@ void overdrive_tilde_setup();
                                                                 andFirstSample:FALSE
                                                                  andLastSample:TRUE];
                     [self.sampleHandler handleSample:newSample inGesture:[self.liveGestureIndeces[0] intValue]];
-                    [PdBase sendFloat:0.0 toReceiver:@"gain1"];
+                    [self.pdButler sendFloat:0.0 toReceiver:@"gain1"];
+                    //[PdBase sendFloat:0.0 toReceiver:@"gain1"];
                     self.isChannel1Open = TRUE;
                 }
                 else if ([touch isEqual:CFArrayGetValueAtIndex(self.liveTouches, 1)])
@@ -544,7 +611,8 @@ void overdrive_tilde_setup();
                                                                 andFirstSample:FALSE
                                                                  andLastSample:TRUE];
                     [self.sampleHandler handleSample:newSample inGesture:[self.liveGestureIndeces[1] intValue]];
-                    [PdBase sendFloat:0.0 toReceiver:@"gain2"];
+                    [self.pdButler sendFloat:0.0 toReceiver:@"gain2"];
+                    //[PdBase sendFloat:0.0 toReceiver:@"gain2"];
                     self.isChannel2Open = TRUE;
                 }
                 else if ([touch isEqual:CFArrayGetValueAtIndex(self.liveTouches, 2)])
@@ -555,7 +623,8 @@ void overdrive_tilde_setup();
                                                                 andFirstSample:FALSE
                                                                  andLastSample:TRUE];
                     [self.sampleHandler handleSample:newSample inGesture:[self.liveGestureIndeces[2] intValue]];
-                    [PdBase sendFloat:0.0 toReceiver:@"gain3"];
+                    [self.pdButler sendFloat:0.0 toReceiver:@"gain3"];
+                    //[PdBase sendFloat:0.0 toReceiver:@"gain3"];
                     self.isChannel3Open = TRUE;
                 }
                 else if ([touch isEqual:CFArrayGetValueAtIndex(self.liveTouches, 3)])
@@ -566,7 +635,8 @@ void overdrive_tilde_setup();
                                                                 andFirstSample:FALSE
                                                                  andLastSample:TRUE];
                     [self.sampleHandler handleSample:newSample inGesture:[self.liveGestureIndeces[3] intValue]];
-                    [PdBase sendFloat:0.0 toReceiver:@"gain4"];
+                    [self.pdButler sendFloat:0.0 toReceiver:@"gain4"];
+                    //[PdBase sendFloat:0.0 toReceiver:@"gain4"];
                     self.isChannel4Open = TRUE;
                 }
                 else if ([touch isEqual:CFArrayGetValueAtIndex(self.liveTouches, 4)])
@@ -577,7 +647,8 @@ void overdrive_tilde_setup();
                                                                 andFirstSample:FALSE
                                                                  andLastSample:TRUE];
                     [self.sampleHandler handleSample:newSample inGesture:[self.liveGestureIndeces[4] intValue]];
-                    [PdBase sendFloat:0.0 toReceiver:@"gain5"];
+                    [self.pdButler sendFloat:0.0 toReceiver:@"gain5"];
+                    //[PdBase sendFloat:0.0 toReceiver:@"gain5"];
                     self.isChannel5Open = TRUE;
                 }
                 else if ([touch isEqual:CFArrayGetValueAtIndex(self.liveTouches, 5)])
@@ -588,7 +659,8 @@ void overdrive_tilde_setup();
                                                                 andFirstSample:FALSE
                                                                  andLastSample:TRUE];
                     [self.sampleHandler handleSample:newSample inGesture:[self.liveGestureIndeces[5] intValue]];
-                    [PdBase sendFloat:0.0 toReceiver:@"gain6"];
+                    [self.pdButler sendFloat:0.0 toReceiver:@"gain6"];
+                    //[PdBase sendFloat:0.0 toReceiver:@"gain6"];
                     self.isChannel6Open = TRUE;
                 }
                 else if ([touch isEqual:CFArrayGetValueAtIndex(self.liveTouches, 6)])
@@ -599,7 +671,8 @@ void overdrive_tilde_setup();
                                                                 andFirstSample:FALSE
                                                                  andLastSample:TRUE];
                     [self.sampleHandler handleSample:newSample inGesture:[self.liveGestureIndeces[6] intValue]];
-                    [PdBase sendFloat:0.0 toReceiver:@"gain7"];
+                    [self.pdButler sendFloat:0.0 toReceiver:@"gain7"];
+                    //[PdBase sendFloat:0.0 toReceiver:@"gain7"];
                     self.isChannel7Open = TRUE;
                 }
                 else if ([touch isEqual:CFArrayGetValueAtIndex(self.liveTouches, 7)])
@@ -610,7 +683,8 @@ void overdrive_tilde_setup();
                                                                 andFirstSample:FALSE
                                                                  andLastSample:TRUE];
                     [self.sampleHandler handleSample:newSample inGesture:[self.liveGestureIndeces[7] intValue]];
-                    [PdBase sendFloat:0.0 toReceiver:@"gain8"];
+                    [self.pdButler sendFloat:0.0 toReceiver:@"gain8"];
+                    //[PdBase sendFloat:0.0 toReceiver:@"gain8"];
                     self.isChannel8Open = TRUE;
                 }
             }
@@ -637,7 +711,8 @@ void overdrive_tilde_setup();
                                                                 andFirstSample:FALSE
                                                                  andLastSample:TRUE];
                     [self.sampleHandler handleSample:newSample inGesture:[self.liveGestureIndeces[0] intValue]];
-                    [PdBase sendFloat:0.0 toReceiver:@"gain1"];
+                    [self.pdButler sendFloat:0.0 toReceiver:@"gain1"];
+                    //[PdBase sendFloat:0.0 toReceiver:@"gain1"];
                     self.isChannel1Open = TRUE;
                 }
                 else if ([touch isEqual:CFArrayGetValueAtIndex(self.liveTouches, 1)])
@@ -648,7 +723,8 @@ void overdrive_tilde_setup();
                                                                 andFirstSample:FALSE
                                                                  andLastSample:TRUE];
                     [self.sampleHandler handleSample:newSample inGesture:[self.liveGestureIndeces[1] intValue]];
-                    [PdBase sendFloat:0.0 toReceiver:@"gain2"];
+                    [self.pdButler sendFloat:0.0 toReceiver:@"gain2"];
+                    //[PdBase sendFloat:0.0 toReceiver:@"gain2"];
                     self.isChannel2Open = TRUE;
                 }
                 else if ([touch isEqual:CFArrayGetValueAtIndex(self.liveTouches, 2)])
@@ -659,7 +735,8 @@ void overdrive_tilde_setup();
                                                                 andFirstSample:FALSE
                                                                  andLastSample:TRUE];
                     [self.sampleHandler handleSample:newSample inGesture:[self.liveGestureIndeces[2] intValue]];
-                    [PdBase sendFloat:0.0 toReceiver:@"gain3"];
+                    [self.pdButler sendFloat:0.0 toReceiver:@"gain3"];
+                    //[PdBase sendFloat:0.0 toReceiver:@"gain3"];
                     self.isChannel3Open = TRUE;
                 }
                 else if ([touch isEqual:CFArrayGetValueAtIndex(self.liveTouches, 3)])
@@ -670,7 +747,8 @@ void overdrive_tilde_setup();
                                                                 andFirstSample:FALSE
                                                                  andLastSample:TRUE];
                     [self.sampleHandler handleSample:newSample inGesture:[self.liveGestureIndeces[3] intValue]];
-                    [PdBase sendFloat:0.0 toReceiver:@"gain4"];
+                    [self.pdButler sendFloat:0.0 toReceiver:@"gain4"];
+                    //[PdBase sendFloat:0.0 toReceiver:@"gain4"];
                     self.isChannel4Open = TRUE;
                 }
                 else if ([touch isEqual:CFArrayGetValueAtIndex(self.liveTouches, 4)])
@@ -681,7 +759,8 @@ void overdrive_tilde_setup();
                                                                 andFirstSample:FALSE
                                                                  andLastSample:TRUE];
                     [self.sampleHandler handleSample:newSample inGesture:[self.liveGestureIndeces[4] intValue]];
-                    [PdBase sendFloat:0.0 toReceiver:@"gain5"];
+                    [self.pdButler sendFloat:0.0 toReceiver:@"gain5"];
+                    //[PdBase sendFloat:0.0 toReceiver:@"gain5"];
                     self.isChannel5Open = TRUE;
                 }
                 else if ([touch isEqual:CFArrayGetValueAtIndex(self.liveTouches, 5)])
@@ -692,7 +771,8 @@ void overdrive_tilde_setup();
                                                                 andFirstSample:FALSE
                                                                  andLastSample:TRUE];
                     [self.sampleHandler handleSample:newSample inGesture:[self.liveGestureIndeces[5] intValue]];
-                    [PdBase sendFloat:0.0 toReceiver:@"gain6"];
+                    [self.pdButler sendFloat:0.0 toReceiver:@"gain6"];
+                    //[PdBase sendFloat:0.0 toReceiver:@"gain6"];
                     self.isChannel6Open = TRUE;
                 }
                 else if ([touch isEqual:CFArrayGetValueAtIndex(self.liveTouches, 6)])
@@ -703,7 +783,8 @@ void overdrive_tilde_setup();
                                                                 andFirstSample:FALSE
                                                                  andLastSample:TRUE];
                     [self.sampleHandler handleSample:newSample inGesture:[self.liveGestureIndeces[6] intValue]];
-                    [PdBase sendFloat:0.0 toReceiver:@"gain7"];
+                    [self.pdButler sendFloat:0.0 toReceiver:@"gain7"];
+                    //[PdBase sendFloat:0.0 toReceiver:@"gain7"];
                     self.isChannel7Open = TRUE;
                 }
                 else if ([touch isEqual:CFArrayGetValueAtIndex(self.liveTouches, 7)])
@@ -714,7 +795,8 @@ void overdrive_tilde_setup();
                                                                 andFirstSample:FALSE
                                                                  andLastSample:TRUE];
                     [self.sampleHandler handleSample:newSample inGesture:[self.liveGestureIndeces[7] intValue]];
-                    [PdBase sendFloat:0.0 toReceiver:@"gain8"];
+                    [self.pdButler sendFloat:0.0 toReceiver:@"gain8"];
+                    //[PdBase sendFloat:0.0 toReceiver:@"gain8"];
                     self.isChannel8Open = TRUE;
                 }
             }

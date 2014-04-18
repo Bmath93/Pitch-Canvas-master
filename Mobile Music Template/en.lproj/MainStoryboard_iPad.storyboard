@@ -357,10 +357,10 @@
             </objects>
             <point key="canvasLocation" x="-789" y="1668"/>
         </scene>
-        <!--View Controller-->
+        <!--Top View Controller-->
         <scene sceneID="tuq-DO-gAI">
             <objects>
-                <viewController id="x2u-aS-jGP" sceneMemberID="viewController">
+                <viewController id="x2u-aS-jGP" customClass="MAGTopViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="6Jr-Sn-94B">
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -414,7 +414,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="N5n-Gc-kor" kind="push" id="OgW-qL-HgL"/>
+                                    <segue destination="N5n-Gc-kor" kind="push" identifier="loadCanvasSettings" id="bcT-7u-OWI"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="HUa-Dz-rfj">
@@ -510,8 +510,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="loadTandemCanvas:" destination="TOx-Gr-21s" eventType="touchUpInside" id="v1P-xp-b0P"/>
-                                    <segue destination="gG4-nd-QeA" kind="push" identifier="loadTandemCanvas" id="W0e-OO-lsg"/>
+                                    <segue destination="gG4-nd-QeA" kind="push" identifier="loadTandemCanvas" id="4i8-xW-jFT"/>
                                 </connections>
                             </button>
                         </subviews>
