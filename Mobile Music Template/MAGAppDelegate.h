@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "PdAudioController.h"
 #import <CoreMotion/CoreMotion.h>
+#import "MAGTopViewController.h"
 
 @class MAGViewController;
 
@@ -19,7 +20,7 @@
 }
 
 @property (strong, nonatomic) UIWindow *window;
-@property (strong, nonatomic) MAGViewController *viewController;
+@property (strong, nonatomic) MAGTopViewController *topViewController;
 @property (nonatomic, strong,readonly) PdAudioController *audioController;
 @property (readonly) CMMotionManager *motionManager;
 

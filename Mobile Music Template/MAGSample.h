@@ -23,9 +23,4 @@
 
 @property CGPoint location;
 
-//probably obsolete in restructuring
-@property BOOL wasFirstSample;
-//probably obsolete in restructuring
-@property BOOL wasLastSample;
-
 @end

@@ -9,17 +9,12 @@
 #import "MAGBackground.h"
 #import "MAGCircle.h"
 #import "MAGCircleArray.h"
-#import "MAGGesture.h"
 #import "MAGSample.h"
 #import <QuartzCore/QuartzCore.h>
 
 @implementation MAGBackground
 
 @synthesize circles = _circles;
-
-@synthesize allGestures = _allGestures;
-
-@synthesize liveGestureIndeces = _liveGestureIndeces;
 
 @synthesize backgroundImage =_backgroundImage;
 
@@ -106,7 +101,7 @@
          */
     else
     {
-        //NSLog(@"drawing");
+        /*//NSLog(@"drawing");
         [self.backgroundImage drawInRect:self.bounds];
         MAGGesture *currentGesture;
         MAGSample *sample1;
@@ -115,10 +110,10 @@
         CGContextSetLineWidth(context, 1);
         for (int gestureIndexCounter = 0; gestureIndexCounter < self.liveGestureIndeces.count; gestureIndexCounter = gestureIndexCounter + 1)
         {
-            /*NSLog(@"gestureIndexCounter: %i",gestureIndexCounter);
-            NSLog(@"liveGestureIndeces.count: %i",self.liveGestureIndeces.count);
-            NSLog(@"self.allGestures.count: %i", self.allGestures.count);
-            NSLog(@"currentGestureIndex: %i",[self.liveGestureIndeces[gestureIndexCounter] intValue]);*/
+            //NSLog(@"gestureIndexCounter: %i",gestureIndexCounter);
+            //NSLog(@"liveGestureIndeces.count: %i",self.liveGestureIndeces.count);
+            //NSLog(@"self.allGestures.count: %i", self.allGestures.count);
+            //NSLog(@"currentGestureIndex: %i",[self.liveGestureIndeces[gestureIndexCounter] intValue]);
             int currentGestureIndex  = [self.liveGestureIndeces[gestureIndexCounter] intValue];
             if (currentGestureIndex != -1)
             {
@@ -128,18 +123,18 @@
                 CGContextMoveToPoint(context, sample1.location.x, sample1.location.y);
                 CGContextAddLineToPoint(context, sample2.location.x, sample2.location.y);
             }
-            /*currentSample = currentGesture.sampleArray[0];
-            CGContextMoveToPoint(context, currentSample.location.x, currentSample.location.y);
-            for (int sampleCounter = 1; sampleCounter < [currentGesture.sampleArray count]; sampleCounter = sampleCounter + 1)
-            {
+            //currentSample = currentGesture.sampleArray[0];
+            //CGContextMoveToPoint(context, currentSample.location.x, currentSample.location.y);
+            //for (int sampleCounter = 1; sampleCounter < [currentGesture.sampleArray count]; sampleCounter = sampleCounter + 1)
+            //{
                 //NSLog(@"gestureCounter: %i, sampleCounter: %i",gestureCounter,sampleCounter);
-                currentSample = currentGesture.sampleArray[sampleCounter];
-                CGContextAddLineToPoint(context, currentSample.location.x, currentSample.location.y);
-            }
-             */
+                //currentSample = currentGesture.sampleArray[sampleCounter];
+                //CGContextAddLineToPoint(context, currentSample.location.x, currentSample.location.y);
+            //}
+            
         }
         CGContextStrokePath(context);
-    }
+    }*/
     //UIGraphicsBeginImageContext(self.bounds.size);
     //[self.layer renderInContext:UIGraphicsGetCurrentContext()];
     //self.backgroundImage = [[UIImage alloc] initWithCGImage:[UIGraphicsGetImageFromCurrentImageContext() CGImage]];
@@ -151,6 +146,7 @@
     /*
     
      */
+    }
 }
 
 @end

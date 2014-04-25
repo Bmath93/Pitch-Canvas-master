@@ -7,7 +7,7 @@
 //
 
 #import "MAGAppDelegate.h"
-#import "MAGViewController.h"
+#import "MAGTopViewController.h"
 
 @implementation MAGAppDelegate
 

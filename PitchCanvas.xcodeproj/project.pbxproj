@@ -44,7 +44,6 @@
 		3715B959162F23330026E296 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3715B958162F23330026E296 /* Default-568h@2x.png */; };
 		3715B95C162F23330026E296 /* MainStoryboard_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3715B95A162F23330026E296 /* MainStoryboard_iPhone.storyboard */; };
 		3715B95F162F23330026E296 /* MainStoryboard_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3715B95D162F23330026E296 /* MainStoryboard_iPad.storyboard */; };
-		3715B962162F23330026E296 /* MAGViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3715B961162F23330026E296 /* MAGViewController.m */; };
 		3715B96A162F23330026E296 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3715B969162F23330026E296 /* SenTestingKit.framework */; };
 		3715B96B162F23330026E296 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3715B942162F23330026E296 /* UIKit.framework */; };
 		3715B96C162F23330026E296 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3715B944162F23330026E296 /* Foundation.framework */; };
@@ -81,8 +80,6 @@
 		3A6B371717A19526002DC520 /* canvas_audio_generator.pd in Resources */ = {isa = PBXBuildFile; fileRef = 3A6B371517A19526002DC520 /* canvas_audio_generator.pd */; };
 		3A6B371817A19526002DC520 /* mag_template.pd in Resources */ = {isa = PBXBuildFile; fileRef = 3A6B371617A19526002DC520 /* mag_template.pd */; };
 		3A6B371C17A1A396002DC520 /* rev2~.pd in Resources */ = {isa = PBXBuildFile; fileRef = 3A6B371B17A1A396002DC520 /* rev2~.pd */; };
-		3A875F79178740C70053955D /* MAGGesture.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A875F78178740C70053955D /* MAGGesture.m */; };
-		3A8937841785F93D005AD710 /* MAGSampleHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A8937831785F93D005AD710 /* MAGSampleHandler.m */; };
 		3A8937881785FA5A005AD710 /* MAGSample.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A8937871785FA5A005AD710 /* MAGSample.m */; };
 		3A89378B178600C9005AD710 /* MAGCircleArray.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A89378A178600C9005AD710 /* MAGCircleArray.m */; };
 		3A8956311799BEF000788E9D /* MAGMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A8956301799BEF000788E9D /* MAGMainViewController.m */; };
@@ -205,8 +202,6 @@
 		3715B958162F23330026E296 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		3715B95B162F23330026E296 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPhone.storyboard; sourceTree = "<group>"; };
 		3715B95E162F23330026E296 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPad.storyboard; sourceTree = "<group>"; };
-		3715B960162F23330026E296 /* MAGViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MAGViewController.h; sourceTree = "<group>"; };
-		3715B961162F23330026E296 /* MAGViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MAGViewController.m; sourceTree = "<group>"; };
 		3715B968162F23330026E296 /* PitchCanvasTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PitchCanvasTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3715B969162F23330026E296 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		3715B971162F23340026E296 /* PitchCanvasTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "PitchCanvasTests-Info.plist"; sourceTree = "<group>"; };
@@ -246,10 +241,6 @@
 		3A6B371517A19526002DC520 /* canvas_audio_generator.pd */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = canvas_audio_generator.pd; sourceTree = "<group>"; };
 		3A6B371617A19526002DC520 /* mag_template.pd */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = mag_template.pd; sourceTree = "<group>"; };
 		3A6B371B17A1A396002DC520 /* rev2~.pd */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "rev2~.pd"; sourceTree = "<group>"; };
-		3A875F77178740C70053955D /* MAGGesture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MAGGesture.h; sourceTree = "<group>"; };
-		3A875F78178740C70053955D /* MAGGesture.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MAGGesture.m; sourceTree = "<group>"; };
-		3A8937821785F93D005AD710 /* MAGSampleHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MAGSampleHandler.h; sourceTree = "<group>"; };
-		3A8937831785F93D005AD710 /* MAGSampleHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MAGSampleHandler.m; sourceTree = "<group>"; };
 		3A8937861785FA5A005AD710 /* MAGSample.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MAGSample.h; sourceTree = "<group>"; };
 		3A8937871785FA5A005AD710 /* MAGSample.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MAGSample.m; sourceTree = "<group>"; };
 		3A893789178600C9005AD710 /* MAGCircleArray.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MAGCircleArray.h; sourceTree = "<group>"; };
@@ -401,8 +392,6 @@
 				3376AB7518F8A1AD004F72CC /* MAGTandemSettingsViewController.m */,
 				33FF575118E5EA300052A226 /* MAGAnotherCanvas.h */,
 				33FF575218E5EA300052A226 /* MAGAnotherCanvas.m */,
-				3715B960162F23330026E296 /* MAGViewController.h */,
-				3715B961162F23330026E296 /* MAGViewController.m */,
 				33832B5C1901A21000F7246D /* MAGCanvas.h */,
 				33832B5D1901A21000F7246D /* MAGCanvas.m */,
 				33E0A3291901BCE50043D698 /* MAGSoundboard.h */,
@@ -411,14 +400,10 @@
 				33832B5A1901A03F00F7246D /* MAGChannel.m */,
 				33832B531901928D00F7246D /* MAGPdButler.h */,
 				33832B541901928D00F7246D /* MAGPdButler.m */,
-				3A8937821785F93D005AD710 /* MAGSampleHandler.h */,
-				3A8937831785F93D005AD710 /* MAGSampleHandler.m */,
 				3A9C0FAE17835E4A00221F62 /* MAGBackground.h */,
 				3A9C0FAF17835E4A00221F62 /* MAGBackground.m */,
 				3A893789178600C9005AD710 /* MAGCircleArray.h */,
 				3A89378A178600C9005AD710 /* MAGCircleArray.m */,
-				3A875F77178740C70053955D /* MAGGesture.h */,
-				3A875F78178740C70053955D /* MAGGesture.m */,
 				3A559D7D177DE8720035B7EF /* MAGCircle.h */,
 				3A559D7E177DE8720035B7EF /* MAGCircle.m */,
 				3A8937861785FA5A005AD710 /* MAGSample.h */,
@@ -710,7 +695,6 @@
 				3715B94F162F23330026E296 /* main.m in Sources */,
 				33FF575318E5EA300052A226 /* MAGAnotherCanvas.m in Sources */,
 				3715B953162F23330026E296 /* MAGAppDelegate.m in Sources */,
-				3715B962162F23330026E296 /* MAGViewController.m in Sources */,
 				3A559D7F177DE8720035B7EF /* MAGCircle.m in Sources */,
 				3A9C0FB017835E4A00221F62 /* MAGBackground.m in Sources */,
 				3AB75F8B17AAC4FD007A6A62 /* loud.c in Sources */,
@@ -729,13 +713,11 @@
 				33E0A32B1901BCE50043D698 /* MAGSoundboard.m in Sources */,
 				3AB75F9217AAC511007A6A62 /* sic.h in Sources */,
 				333A316E18F9AFA500FE230A /* F53OSCPacket.m in Sources */,
-				3A8937841785F93D005AD710 /* MAGSampleHandler.m in Sources */,
 				3A8937881785FA5A005AD710 /* MAGSample.m in Sources */,
 				333A317818F9AFA500FE230A /* NSNumber+F53OSCNumber.m in Sources */,
 				3A89378B178600C9005AD710 /* MAGCircleArray.m in Sources */,
 				333A317718F9AFA500FE230A /* NSDate+F53OSCTimeTag.m in Sources */,
 				33832B5E1901A21000F7246D /* MAGCanvas.m in Sources */,
-				3A875F79178740C70053955D /* MAGGesture.m in Sources */,
 				333A317018F9AFA500FE230A /* F53OSCServer.m in Sources */,
 				3A8956311799BEF000788E9D /* MAGMainViewController.m in Sources */,
 				3AB75F7417A86145007A6A62 /* MAGNavigationController.m in Sources */,

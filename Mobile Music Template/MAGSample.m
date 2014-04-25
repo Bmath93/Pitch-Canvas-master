@@ -12,8 +12,6 @@
 
 @synthesize location = _location;
 @synthesize time = _time;
-@synthesize wasFirstSample = _wasFirstSample;
-@synthesize wasLastSample = _wasLastSample;
 
 //probably obsolete in restructuring
 - (id)initWithLocation:(CGPoint)sampleLocation andTime:(NSDate *)sampleTime andFirstSample:(BOOL)wasFirstSample andLastSample:(BOOL)wasLastSample
@@ -24,8 +22,6 @@
     {
         _location = CGPointMake(sampleLocation.x,sampleLocation.y);
         _time = sampleTime.copy;
-        _wasFirstSample = wasFirstSample;
-        _wasLastSample = wasLastSample;
     }
     return self;
 }
