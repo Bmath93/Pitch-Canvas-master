@@ -10,17 +10,22 @@
 
 @interface MAGSample : NSObject
 
+//probably obsolete in restructuring
 - (id)initWithLocation:(CGPoint)sampleLocation andTime:(NSDate *)sampleTime andFirstSample:(BOOL)wasFirstSample andLastSample:(BOOL)wasLastSample;
 
-//method not called
-//- (float)distanceFromSample:(CGPoint)aPoint;
+- (id)initWithLocation:(CGPoint)sampleLocation andTime:(NSDate *)sampleTime;
+
+- (float)distanceFromSample:(MAGSample *)otherSample;
+
+- (float)secondsSinceSample:(MAGSample *)otherSample;
 
 @property (strong,nonatomic) NSDate *time;
 
 @property CGPoint location;
 
+//probably obsolete in restructuring
 @property BOOL wasFirstSample;
-
+//probably obsolete in restructuring
 @property BOOL wasLastSample;
 
 @end

@@ -15,14 +15,14 @@
 
 @interface MAGSoundboard : NSObject
 
-@property (strong, nonatomic) NSMutableArray *gestureArray;
+//@property (strong, nonatomic) NSMutableArray *gestureArray;
 
 @property (weak, nonatomic) MAGCircleArray *circles;
 
-- (id)initEmptyArrayWithCircles:(MAGCircleArray *)someCircles andButler:(MAGPdButler*)aButler;
+- (id)initWithCircles:(MAGCircleArray *)someCircles andButler:(MAGPdButler*)aButler;
 
--(void) sendBeganLocation:(CGPoint)location withTouchID:(UITouch*)touch;
--(void) sendMovedLocation:(CGPoint)location fromTouch:(UITouch*)touch;
--(void) sendEndedFromTouch:(UITouch*)touch;
+-(void) handleBeganLocation:(CGPoint)location withTouchID:(UITouch*)touch;
+-(void) handleMovedLocation:(CGPoint)location fromTouch:(UITouch*)touch;
+-(void) handleEndedFromTouch:(UITouch*)touch;
 
 @end

@@ -53,4 +53,11 @@
     self.audioController.active = NO;
 }
 
+- (CMMotionManager *)motionManager
+{
+    if (!motionManager) motionManager = [[CMMotionManager alloc] init];
+    
+    return motionManager;
+}
+
 @end

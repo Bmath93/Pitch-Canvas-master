@@ -24,4 +24,6 @@
 -(void) sendGain:(float)gain;
 -(void) sendRev:(float)rev;
 
+-(float) giveVelocity:(MAGSample *)incomingSample;
+
 @end

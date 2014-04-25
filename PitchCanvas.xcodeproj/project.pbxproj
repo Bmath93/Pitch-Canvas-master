@@ -30,6 +30,7 @@
 		33832B551901928D00F7246D /* MAGPdButler.m in Sources */ = {isa = PBXBuildFile; fileRef = 33832B541901928D00F7246D /* MAGPdButler.m */; };
 		33832B5B1901A03F00F7246D /* MAGChannel.m in Sources */ = {isa = PBXBuildFile; fileRef = 33832B5A1901A03F00F7246D /* MAGChannel.m */; };
 		33832B5E1901A21000F7246D /* MAGCanvas.m in Sources */ = {isa = PBXBuildFile; fileRef = 33832B5D1901A21000F7246D /* MAGCanvas.m */; };
+		33D1A6CA190AEB6700B1CC2B /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 33D1A6C9190AEB6700B1CC2B /* CoreMotion.framework */; };
 		33E0A32B1901BCE50043D698 /* MAGSoundboard.m in Sources */ = {isa = PBXBuildFile; fileRef = 33E0A32A1901BCE50043D698 /* MAGSoundboard.m */; };
 		33FF575318E5EA300052A226 /* MAGAnotherCanvas.m in Sources */ = {isa = PBXBuildFile; fileRef = 33FF575218E5EA300052A226 /* MAGAnotherCanvas.m */; };
 		3715B943162F23330026E296 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3715B942162F23330026E296 /* UIKit.framework */; };
@@ -184,6 +185,7 @@
 		33832B5A1901A03F00F7246D /* MAGChannel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MAGChannel.m; sourceTree = "<group>"; };
 		33832B5C1901A21000F7246D /* MAGCanvas.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MAGCanvas.h; sourceTree = "<group>"; };
 		33832B5D1901A21000F7246D /* MAGCanvas.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MAGCanvas.m; sourceTree = "<group>"; };
+		33D1A6C9190AEB6700B1CC2B /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
 		33E0A3291901BCE50043D698 /* MAGSoundboard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MAGSoundboard.h; sourceTree = "<group>"; };
 		33E0A32A1901BCE50043D698 /* MAGSoundboard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MAGSoundboard.m; sourceTree = "<group>"; };
 		33FF575118E5EA300052A226 /* MAGAnotherCanvas.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MAGAnotherCanvas.h; sourceTree = "<group>"; };
@@ -275,6 +277,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				33D1A6CA190AEB6700B1CC2B /* CoreMotion.framework in Frameworks */,
 				333A31F218F9B56B00FE230A /* CFNetwork.framework in Frameworks */,
 				333A31B418F9B2A400FE230A /* Security.framework in Frameworks */,
 				3715B9A4162F42CD0026E296 /* AVFoundation.framework in Frameworks */,
@@ -365,6 +368,7 @@
 		3715B941162F23330026E296 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				33D1A6C9190AEB6700B1CC2B /* CoreMotion.framework */,
 				333A31F118F9B56B00FE230A /* CFNetwork.framework */,
 				333A31B518F9B32600FE230A /* QuartzCore.framework */,
 				333A31B118F9B16A00FE230A /* Security.framework */,

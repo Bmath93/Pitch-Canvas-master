@@ -10,7 +10,7 @@
 
 @interface MAGCanvas ()
 
-@property (strong, nonatomic) MAGCircleArray *circles;
+@property (weak, nonatomic) IBOutlet MAGBackground *theBackground;
 
 @end
 
@@ -19,16 +19,32 @@
 -(void) viewDidLoad{
     [super viewDidLoad];
     
-    self.circles = [[MAGCircleArray alloc] initWithRadius:self.circleSize andPitch:self.baseKey andShift:self.shift andMultipleKeys:self.multipleKeys];
-    self.theSoundboard = [[MAGSoundboard alloc] initEmptyArrayWithCircles:self.circles andButler:self.pdButler];
-    /*self.theBackground.circles = self.circles;
-     self.theBackground.allGestures = self.sampleHandler.gestureArray;
-     [self.theBackground setNeedsDisplay];*/
+    motionManager = [[CMMotionManager alloc] init];
+    motionManager.accelerometerUpdateInterval = 1.0/10.0;
+    
+    
+    [self initializeAttributes];
 }
 
 - (void)viewDidUnload {
     //[self setTheBackground:nil];
     [super viewDidUnload];
+}
+
+- (void) initializeAttributes{
+    MAGCircleArray *theCircles = [[MAGCircleArray alloc] initWithRadius:self.circleSize andPitch:self.baseKey andShift:self.shift andMultipleKeys:self.multipleKeys];
+    if (theCircles == nil){
+        NSLog(@"theCircles is nil");
+    }
+    self.theSoundboard = [[MAGSoundboard alloc] initWithCircles: theCircles andButler:self.pdButler];
+    self.theBackground.circles = theCircles;
+    if (self.theSoundboard.circles == nil){
+        NSLog(@"self.theSoundboard.circles is nil");
+    }
+    if (self.theBackground.circles == nil){
+        NSLog(@"self.theBackground.circles is nil");
+    }
+    [self.theBackground setNeedsDisplay];
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation
@@ -44,7 +60,8 @@
         {
             if (touch.phase == UITouchPhaseBegan)
             {
-                
+                [self.theSoundboard handleBeganLocation:[touch locationInView:touch.view]
+                                            withTouchID:touch];
             }
         }
     }
@@ -56,10 +73,10 @@
     {
         for (UITouch *touch in touches)
         {
-            /*if (touch.phase == UITouchPhaseMoved)
+            if (touch.phase == UITouchPhaseMoved)
             {
-                
-            }*/
+                [self.theSoundboard handleMovedLocation:[touch locationInView:touch.view] fromTouch:touch];
+            }
         }
     }
 }
@@ -72,7 +89,7 @@
         {
             if (touch.phase == UITouchPhaseEnded)
             {
-                
+                [self.theSoundboard handleEndedFromTouch:touch];
             }
         }
     }
@@ -90,6 +107,19 @@
             }
         }
     }
+}
+
+- (CMMotionManager *)motionManager
+{
+    CMMotionManager *motionManager = nil;
+    
+    id appDelegate = [UIApplication sharedApplication].delegate;
+    
+    if ([appDelegate respondsToSelector:@selector(motionManager)]) {
+        motionManager = [appDelegate motionManager];
+    }
+    
+    return motionManager;
 }
 
 @end

@@ -1,6 +1,6 @@
 #N canvas 326 86 1480 559 10;
 #X obj 596 317 +~;
-#X obj 587 347 dac~;
+#X obj 586 385 dac~;
 #X obj 85 45 r rev1;
 #X obj -44 45 r freq1;
 #X obj 20 45 r gain1;
@@ -33,8 +33,8 @@
 #X obj 862 75 canvas_audio_generator;
 #X obj 1042 75 canvas_audio_generator;
 #X obj 1222 75 canvas_audio_generator;
-#X connect 0 0 1 0;
-#X connect 0 0 1 1;
+#X obj 596 352 rev2~ 100 65 3000 50;
+#X connect 0 0 34 0;
 #X connect 2 0 27 2;
 #X connect 3 0 27 0;
 #X connect 4 0 27 1;
@@ -67,3 +67,5 @@
 #X connect 31 0 0 1;
 #X connect 32 0 0 1;
 #X connect 33 0 0 1;
+#X connect 34 0 1 0;
+#X connect 34 0 1 1;

@@ -7,11 +7,16 @@
 //
 
 #import <UIKit/Uikit.h>
+#import <CoreMotion/CoreMotion.h>
 #import "MAGCircleArray.h"
 #import "MAGPdButler.h"
 #import "MAGSoundboard.h"
+#import "MAGBackground.h"
 
-@interface MAGCanvas : UIViewController
+@interface MAGCanvas : UIViewController {
+    CMMotionManager *motionManager;
+    NSOperationQueue *queue;
+}
 
 //needs a connection with the storyboard
 //@property (strong, nonatomic) IBOutlet MAGBackground *theBackground;

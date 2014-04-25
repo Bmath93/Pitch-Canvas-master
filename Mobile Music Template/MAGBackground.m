@@ -49,6 +49,10 @@
     if (self.backgroundImage == NULL)
     {
         NSLog(@"background image was null");
+        //NSLog(@"%f",[[self.circles.circleArray.pitchMap objectAtIndex:55] objectAtIndex:55]);
+        if (self.circles == nil) {
+            NSLog(@"theBackground.circles is nil");
+        }
         float alpha = 0.3;
         for (int counter = 0; counter < self.circles.circleArray.count; counter = counter + 1)
         {

@@ -8,14 +8,20 @@
 
 #import <UIKit/UIKit.h>
 #import "PdAudioController.h"
+#import <CoreMotion/CoreMotion.h>
 
 @class MAGViewController;
 
-@interface MAGAppDelegate : UIResponder <UIApplicationDelegate>
+@interface MAGAppDelegate : UIResponder <UIApplicationDelegate> {
+    
+    CMMotionManager *motionManager;
+    
+}
 
 @property (strong, nonatomic) UIWindow *window;
 @property (strong, nonatomic) MAGViewController *viewController;
 @property (nonatomic, strong,readonly) PdAudioController *audioController;
+@property (readonly) CMMotionManager *motionManager;
 
 
 @end

@@ -216,6 +216,7 @@
                                 </state>
                                 <connections>
                                     <action selector="loadCanvas" destination="N5n-Gc-kor" eventType="touchUpInside" id="Ez4-oq-tcE"/>
+                                    <segue destination="hXe-Xl-Opz" kind="push" identifier="loadCanvas" id="b9n-OJ-Ico"/>
                                 </connections>
                             </button>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="2" id="FsY-cV-XMf">
@@ -275,7 +276,6 @@
                         <outlet property="multipleKeySwitch" destination="AlO-m6-afA" id="DkD-wF-vaN"/>
                         <outlet property="shiftSwitch" destination="Sbt-r2-4t0" id="bit-rM-EWC"/>
                         <outlet property="sizeSwitch" destination="J5I-Id-6J3" id="97v-dP-906"/>
-                        <segue destination="2" kind="push" identifier="loadCanvas" id="vZ4-eS-fDA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fCu-dI-hMx" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -356,6 +356,31 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="apf-ho-yE2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-789" y="1668"/>
+        </scene>
+        <!--Canvas-->
+        <scene sceneID="YNI-SI-Eux">
+            <objects>
+                <viewController id="hXe-Xl-Opz" customClass="MAGCanvas" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="TIn-oc-p1e">
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <view multipleTouchEnabled="YES" contentMode="scaleToFill" id="73G-vv-Sfx" customClass="MAGBackground">
+                                <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="68o-sc-7Qu"/>
+                    <connections>
+                        <outlet property="theBackground" destination="73G-vv-Sfx" id="JFe-j6-So3"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wZl-nI-vGt" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="116" y="1672"/>
         </scene>
         <!--Top View Controller-->
         <scene sceneID="tuq-DO-gAI">
