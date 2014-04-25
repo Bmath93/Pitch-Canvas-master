@@ -122,4 +122,34 @@
     return motionManager;
 }
 
+- (void)viewDidAppear:(BOOL)animated
+{
+    
+    [super viewDidAppear:animated];
+    
+    [self startAccelerometerData];
+    
+}
+
+- (void)startAccelerometerData{
+    //__block float stepMoveFactor = 15;
+    
+    [self.motionManager
+     startAccelerometerUpdatesToQueue:[[NSOperationQueue alloc] init]
+     withHandler:^(CMAccelerometerData *data, NSError *error)
+     {
+         
+         dispatch_async(dispatch_get_main_queue(),
+                        ^{
+                            //[self.theSoundboard handleAccelerometerDataX:data.acceleration.x];
+                            [self.theSoundboard handleAccelerometerDataY:data.acceleration.y];
+                            //[self.theSoundboard handleAccelerometerDataZ:data.acceleration.z];
+                            //NSLog(@"%f",data.acceleration.y);
+                        }
+                        );
+     }
+     ];
+    
+}
+
 @end

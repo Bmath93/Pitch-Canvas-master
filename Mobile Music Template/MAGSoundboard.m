@@ -18,6 +18,7 @@
 
 - (id)initWithCircles:(MAGCircleArray *)someCircles andButler:(MAGPdButler*)aButler{
     self = [super init];
+    self.theButler = aButler;
     self.circles = someCircles;
     self.allChannels = [[NSArray alloc] initWithObjects:[[MAGChannel alloc] initWithButler:aButler andNum:1],
                         [[MAGChannel alloc] initWithButler:aButler andNum:2],
@@ -104,6 +105,22 @@
             channel.isOpen = TRUE;
         }
     }
+}
+
+-(void) handleAccelerometerDataX:(float)xTilt{
+    
+}
+-(void) handleAccelerometerDataY:(float)yTilt{
+    float revValue = ABS(yTilt)+0.1;
+    if (revValue > 0.7) {revValue = 1.0;}
+    [self setFullReverb:revValue];
+}
+-(void) handleAccelerometerDataZ:(float)zTilt{
+    
+}
+
+-(void) setFullReverb:(float)revLevel{
+    [self.theButler sendFloat:revLevel toReceiver:@"rev"];
 }
 
 @end

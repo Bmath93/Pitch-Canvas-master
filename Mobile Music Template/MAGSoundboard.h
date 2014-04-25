@@ -16,7 +16,7 @@
 @interface MAGSoundboard : NSObject
 
 //@property (strong, nonatomic) NSMutableArray *gestureArray;
-
+@property (weak,nonatomic) MAGPdButler *theButler;
 @property (weak, nonatomic) MAGCircleArray *circles;
 
 - (id)initWithCircles:(MAGCircleArray *)someCircles andButler:(MAGPdButler*)aButler;
@@ -24,5 +24,9 @@
 -(void) handleBeganLocation:(CGPoint)location withTouchID:(UITouch*)touch;
 -(void) handleMovedLocation:(CGPoint)location fromTouch:(UITouch*)touch;
 -(void) handleEndedFromTouch:(UITouch*)touch;
+
+-(void) handleAccelerometerDataX:(float)xTilt;
+-(void) handleAccelerometerDataY:(float)yTilt;
+-(void) handleAccelerometerDataZ:(float)zTilt;
 
 @end
