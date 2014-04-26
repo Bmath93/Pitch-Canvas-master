@@ -108,12 +108,13 @@
 }
 
 -(void) handleAccelerometerDataX:(float)xTilt{
-    
+    float scaledGainValue = xTilt/2.0;
+    [self setInitialTouchGain:scaledGainValue];
 }
 -(void) handleAccelerometerDataY:(float)yTilt{
-    float revValue = ABS(yTilt)+0.1;
-    if (revValue > 0.7) {revValue = 1.0;}
-    [self setFullReverb:revValue];
+    float scaledRevValue = ABS(yTilt)+0.1;
+    if (scaledRevValue > 0.7) {scaledRevValue = 1.0;}
+    [self setFullReverb:scaledRevValue];
 }
 -(void) handleAccelerometerDataZ:(float)zTilt{
     
@@ -121,6 +122,9 @@
 
 -(void) setFullReverb:(float)revLevel{
     [self.theButler sendFloat:revLevel toReceiver:@"rev"];
+}
+-(void) setInitialTouchGain:(float)gainLevel{
+    [self.theButler sendFloat:gainLevel toReceiver:@"initialGain"];
 }
 
 @end

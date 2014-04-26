@@ -141,10 +141,9 @@
          
          dispatch_async(dispatch_get_main_queue(),
                         ^{
-                            //[self.theSoundboard handleAccelerometerDataX:data.acceleration.x];
+                            [self.theSoundboard handleAccelerometerDataX:data.acceleration.x];
                             [self.theSoundboard handleAccelerometerDataY:data.acceleration.y];
                             //[self.theSoundboard handleAccelerometerDataZ:data.acceleration.z];
-                            //NSLog(@"%f",data.acceleration.y);
                         }
                         );
      }
