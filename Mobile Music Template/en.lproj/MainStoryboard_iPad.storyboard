@@ -20,10 +20,10 @@
             </objects>
             <point key="canvasLocation" x="-3220" y="511"/>
         </scene>
-        <!--Another Canvas-->
+        <!--Tandem Canvas-->
         <scene sceneID="nHL-4L-1Kc">
             <objects>
-                <viewController id="gG4-nd-QeA" customClass="MAGAnotherCanvas" sceneMemberID="viewController">
+                <viewController id="gG4-nd-QeA" customClass="MAGTandemCanvas" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="S8e-jV-TIX">
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -35,7 +35,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="recordNextGesture1:" destination="gG4-nd-QeA" eventType="touchUpInside" id="SOA-5I-QUu"/>
+                                    <action selector="recordNextGesture1:" destination="gG4-nd-QeA" eventType="touchUpInside" id="aXA-aa-gvx"/>
                                 </connections>
                             </button>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="no gesture currently stored" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="DZj-H9-OV6">
@@ -52,7 +52,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="playCurrentGestureUponNextTouch1:" destination="gG4-nd-QeA" eventType="touchUpInside" id="B0Z-N6-vj9"/>
+                                    <action selector="playCurrentGestureUponNextTouch1:" destination="gG4-nd-QeA" eventType="touchUpInside" id="nwL-5G-2gm"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -60,7 +60,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="c6N-Nd-apZ"/>
                     <connections>
-                        <outlet property="gestureStorageLabel1" destination="DZj-H9-OV6" id="m7F-RY-nJp"/>
+                        <outlet property="gestureStorageLabel" destination="S8e-jV-TIX" id="B3F-Rd-h8C"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GBl-qe-qDH" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -115,8 +115,8 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Listen on Port" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="BPz-zA-cIC">
-                                <rect key="frame" x="175" y="242" width="147" height="21"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="And Port:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="BPz-zA-cIC">
+                                <rect key="frame" x="461" y="242" width="147" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -212,6 +212,19 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Port Number" minimumFontSize="17" id="sSo-71-LuK">
+                                <rect key="frame" x="461" y="290" width="97" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Tandem Canvas on Address:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="hyC-zX-SY9">
+                                <rect key="frame" x="175" y="242" width="220" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="IP Address" minimumFontSize="17" id="TrL-7C-edn">
                                 <rect key="frame" x="175" y="290" width="97" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -232,9 +245,11 @@
                     </view>
                     <navigationItem key="navigationItem" id="abD-PT-70Z"/>
                     <connections>
+                        <outlet property="IPAddressTextField" destination="TrL-7C-edn" id="X9B-BA-5iW"/>
                         <outlet property="baseRange" destination="FsY-cV-XMf" id="6y2-XO-vB5"/>
                         <outlet property="keySwitch" destination="0NG-Bh-dkq" id="iFr-LA-3Jb"/>
                         <outlet property="multipleKeySwitch" destination="AlO-m6-afA" id="DkD-wF-vaN"/>
+                        <outlet property="portNumberTextField" destination="sSo-71-LuK" id="OFv-cU-58a"/>
                         <outlet property="shiftSwitch" destination="Sbt-r2-4t0" id="bit-rM-EWC"/>
                         <outlet property="sizeSwitch" destination="J5I-Id-6J3" id="97v-dP-906"/>
                     </connections>

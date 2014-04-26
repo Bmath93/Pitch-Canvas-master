@@ -7,7 +7,7 @@
 //
 
 #import "MAGTandemSettingsViewController.h"
-#import "MAGAnotherCanvas.h"
+#import "MAGTandemCanvas.h"
 
 @interface MAGTandemSettingsViewController ()
 

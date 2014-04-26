@@ -33,9 +33,7 @@
 
 - (void) initializeAttributes{
     MAGCircleArray *theCircles = [[MAGCircleArray alloc] initWithRadius:self.circleSize andPitch:self.baseKey andShift:self.shift andMultipleKeys:self.multipleKeys];
-    if (theCircles == nil){
-        NSLog(@"theCircles is nil");
-    }
+    MAGOSCButler *oscButler = [[MAGOSCButler alloc] initToAddress:self.userAddress onPort:self.userPort];
     self.theSoundboard = [[MAGSoundboard alloc] initWithCircles: theCircles andButler:self.pdButler];
     self.theBackground.circles = theCircles;
     if (self.theSoundboard.circles == nil){

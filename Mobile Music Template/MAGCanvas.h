@@ -12,8 +12,9 @@
 #import "MAGPdButler.h"
 #import "MAGSoundboard.h"
 #import "MAGBackground.h"
+#import "MAGOSCButler.h"
 
-@interface MAGCanvas : UIViewController {
+@interface MAGCanvas : UIViewController{
     CMMotionManager *motionManager;
     NSOperationQueue *queue;
 }
@@ -28,5 +29,7 @@
 @property int shift;
 @property float circleSize;
 @property int multipleKeys;
+@property int userPort;
+@property NSString *userAddress;
 
 @end

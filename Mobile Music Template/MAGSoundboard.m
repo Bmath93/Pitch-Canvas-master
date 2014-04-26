@@ -108,7 +108,8 @@
 }
 
 -(void) handleAccelerometerDataX:(float)xTilt{
-    float scaledGainValue = xTilt/2.0;
+    float scaledGainValue = ABS(xTilt-0.02)/2.0;
+    if (scaledGainValue > 0.3) {scaledGainValue = 0.3;}
     [self setInitialTouchGain:scaledGainValue];
 }
 -(void) handleAccelerometerDataY:(float)yTilt{

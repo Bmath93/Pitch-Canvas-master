@@ -32,7 +32,8 @@
 		33832B5E1901A21000F7246D /* MAGCanvas.m in Sources */ = {isa = PBXBuildFile; fileRef = 33832B5D1901A21000F7246D /* MAGCanvas.m */; };
 		33D1A6CA190AEB6700B1CC2B /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 33D1A6C9190AEB6700B1CC2B /* CoreMotion.framework */; };
 		33E0A32B1901BCE50043D698 /* MAGSoundboard.m in Sources */ = {isa = PBXBuildFile; fileRef = 33E0A32A1901BCE50043D698 /* MAGSoundboard.m */; };
-		33FF575318E5EA300052A226 /* MAGAnotherCanvas.m in Sources */ = {isa = PBXBuildFile; fileRef = 33FF575218E5EA300052A226 /* MAGAnotherCanvas.m */; };
+		33FD7305190C2E4E000FED7A /* MAGOSCButler.m in Sources */ = {isa = PBXBuildFile; fileRef = 33FD7304190C2E4E000FED7A /* MAGOSCButler.m */; };
+		33FF575318E5EA300052A226 /* MAGTandemCanvas.m in Sources */ = {isa = PBXBuildFile; fileRef = 33FF575218E5EA300052A226 /* MAGTandemCanvas.m */; };
 		3715B943162F23330026E296 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3715B942162F23330026E296 /* UIKit.framework */; };
 		3715B945162F23330026E296 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3715B944162F23330026E296 /* Foundation.framework */; };
 		3715B947162F23330026E296 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3715B946162F23330026E296 /* CoreGraphics.framework */; };
@@ -185,8 +186,10 @@
 		33D1A6C9190AEB6700B1CC2B /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
 		33E0A3291901BCE50043D698 /* MAGSoundboard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MAGSoundboard.h; sourceTree = "<group>"; };
 		33E0A32A1901BCE50043D698 /* MAGSoundboard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MAGSoundboard.m; sourceTree = "<group>"; };
-		33FF575118E5EA300052A226 /* MAGAnotherCanvas.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MAGAnotherCanvas.h; sourceTree = "<group>"; };
-		33FF575218E5EA300052A226 /* MAGAnotherCanvas.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MAGAnotherCanvas.m; sourceTree = "<group>"; };
+		33FD7303190C2E4E000FED7A /* MAGOSCButler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MAGOSCButler.h; sourceTree = "<group>"; };
+		33FD7304190C2E4E000FED7A /* MAGOSCButler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MAGOSCButler.m; sourceTree = "<group>"; };
+		33FF575118E5EA300052A226 /* MAGTandemCanvas.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MAGTandemCanvas.h; sourceTree = "<group>"; };
+		33FF575218E5EA300052A226 /* MAGTandemCanvas.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MAGTandemCanvas.m; sourceTree = "<group>"; };
 		3715B93E162F23330026E296 /* PitchCanvas.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PitchCanvas.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3715B942162F23330026E296 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		3715B944162F23330026E296 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -390,8 +393,8 @@
 				3A8956301799BEF000788E9D /* MAGMainViewController.m */,
 				3376AB7418F8A1AD004F72CC /* MAGTandemSettingsViewController.h */,
 				3376AB7518F8A1AD004F72CC /* MAGTandemSettingsViewController.m */,
-				33FF575118E5EA300052A226 /* MAGAnotherCanvas.h */,
-				33FF575218E5EA300052A226 /* MAGAnotherCanvas.m */,
+				33FF575118E5EA300052A226 /* MAGTandemCanvas.h */,
+				33FF575218E5EA300052A226 /* MAGTandemCanvas.m */,
 				33832B5C1901A21000F7246D /* MAGCanvas.h */,
 				33832B5D1901A21000F7246D /* MAGCanvas.m */,
 				33E0A3291901BCE50043D698 /* MAGSoundboard.h */,
@@ -400,6 +403,8 @@
 				33832B5A1901A03F00F7246D /* MAGChannel.m */,
 				33832B531901928D00F7246D /* MAGPdButler.h */,
 				33832B541901928D00F7246D /* MAGPdButler.m */,
+				33FD7303190C2E4E000FED7A /* MAGOSCButler.h */,
+				33FD7304190C2E4E000FED7A /* MAGOSCButler.m */,
 				3A9C0FAE17835E4A00221F62 /* MAGBackground.h */,
 				3A9C0FAF17835E4A00221F62 /* MAGBackground.m */,
 				3A893789178600C9005AD710 /* MAGCircleArray.h */,
@@ -693,7 +698,7 @@
 				333A316D18F9AFA500FE230A /* F53OSCMessage.m in Sources */,
 				333A317118F9AFA500FE230A /* F53OSCSocket.m in Sources */,
 				3715B94F162F23330026E296 /* main.m in Sources */,
-				33FF575318E5EA300052A226 /* MAGAnotherCanvas.m in Sources */,
+				33FF575318E5EA300052A226 /* MAGTandemCanvas.m in Sources */,
 				3715B953162F23330026E296 /* MAGAppDelegate.m in Sources */,
 				3A559D7F177DE8720035B7EF /* MAGCircle.m in Sources */,
 				3A9C0FB017835E4A00221F62 /* MAGBackground.m in Sources */,
@@ -704,6 +709,7 @@
 				37600CA7180BA10000934FE2 /* MAGInfoViewController.m in Sources */,
 				3AB75F8E17AAC506007A6A62 /* m_pd.h in Sources */,
 				3376AB7618F8A1AD004F72CC /* MAGTandemSettingsViewController.m in Sources */,
+				33FD7305190C2E4E000FED7A /* MAGOSCButler.m in Sources */,
 				333A316F18F9AFA500FE230A /* F53OSCParser.m in Sources */,
 				3AB75F8F17AAC509007A6A62 /* shared.c in Sources */,
 				333A316C18F9AFA500FE230A /* F53OSCClient.m in Sources */,
