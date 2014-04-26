@@ -111,11 +111,13 @@
     float scaledGainValue = ABS(xTilt-0.02)/2.0;
     if (scaledGainValue > 0.3) {scaledGainValue = 0.3;}
     [self setInitialTouchGain:scaledGainValue];
+    //NSLog(@"%f",scaledGainValue);
 }
 -(void) handleAccelerometerDataY:(float)yTilt{
-    float scaledRevValue = ABS(yTilt)+0.1;
-    if (scaledRevValue > 0.7) {scaledRevValue = 1.0;}
+    float scaledRevValue = 1.5*ABS(yTilt)+0.1;
+    if (scaledRevValue > 1.0) {scaledRevValue = 1.0;}
     [self setFullReverb:scaledRevValue];
+    NSLog(@"%f",scaledRevValue);
 }
 -(void) handleAccelerometerDataZ:(float)zTilt{
     
