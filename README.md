@@ -1,4 +1,4 @@
-Mobile-Music-Template
+Pitch Canvas
 =====================
 
-Template project for creating a libpd based mobile music instrument
+Non-skeumorphic, gesture-based touchscreen instrument
