@@ -7,7 +7,7 @@
 //
 
 #import "MAGMainViewController.h"
-#import "MAGViewController.h"
+#import "MAGCanvas.h"
 
 @interface MAGMainViewController ()
 
@@ -26,6 +26,7 @@
 @end
 
 @implementation MAGMainViewController
+@synthesize pdButler;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -53,7 +54,7 @@
 
 - (IBAction)loadCanvas
 {
-    [self performSegueWithIdentifier:@"loadCanvas" sender:self];
+    //[self performSegueWithIdentifier:@"loadCanvas" sender:self];
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
@@ -64,6 +65,19 @@
         [segue.destinationViewController setCircleSize:([self.sizeSwitch selectedSegmentIndex]*50.0 + 50.0)];
         [segue.destinationViewController setShift:([self.shiftSwitch selectedSegmentIndex])];
         [segue.destinationViewController setMultipleKeys:([self.multipleKeySwitch selectedSegmentIndex])];
+        
+        [segue.destinationViewController setPdButler:self.pdButler];
+        [segue.destinationViewController setOscButler:self.oscButler];
+        
+        //[segue.destinationViewController setUserAddress:[self.IPAddressTextField text]];
+        //[segue.destinationViewController setUserPort:[[self.portNumberTextField text] intValue]];
+        
+        if (!self.pdButler) {
+            NSLog(@"pdButler not loaded");
+        }
+        if (!self.oscButler) {
+            NSLog(@"oscButler not loaded");
+        }
     }
 }
 

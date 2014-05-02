@@ -10,8 +10,6 @@
 
 @interface MAGPdButler ()
 
-
-
 @end
 
 @implementation MAGPdButler
