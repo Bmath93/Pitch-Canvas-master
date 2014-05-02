@@ -7,9 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "F53OSC.h"
+#import "MAGOSCButler.h"
 
 @interface MAGTandemCanvas : UIViewController <F53OSCPacketDestination>
+
+@property (weak, nonatomic) MAGOSCButler *oscButler;
 
 @property int userPort;
 

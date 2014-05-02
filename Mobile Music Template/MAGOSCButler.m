@@ -37,12 +37,18 @@
 -(void) takeMessage:(F53OSCMessage *)message{
     NSString *addressPattern = message.addressPattern;
     NSArray *arguments = message.arguments;
-    if ([addressPattern isEqualToString:@"/Canvas/gestureRequest1"]){
+    
+    if ([addressPattern isEqualToString:@"/path1/message1"]){
         NSLog(@"%i",[[arguments objectAtIndex:0] intValue]);
-        self.shouldRecordNextGesture = TRUE;
+        self.receivedNumber = [[arguments objectAtIndex:0] intValue];
     }
 }
 
-
+-(void)sendNumber:(int)aNumber{
+    NSArray *arguments1 = [[NSArray alloc] initWithObjects:[NSNumber numberWithInt:aNumber], nil];
+    F53OSCMessage *message1 = [F53OSCMessage messageWithAddressPattern:@"/path1/message1"
+                                                   arguments:arguments1];
+    [self.oscClient sendPacket:message1 toHost:self.address onPort:self.sendPortNumber];
+}
 
 @end

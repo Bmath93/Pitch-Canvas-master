@@ -1,4 +1,4 @@
-#N canvas 0 22 1920 1032 10;
+#N canvas 0 22 426 735 10;
 #X obj -53 691 dac~;
 #X obj 70 45 r rev1;
 #X obj -30 45 r freq1;
@@ -39,6 +39,7 @@
 #X obj 74 620 + 100;
 #X obj -43 658 rev2~ 100 95 3000 50;
 #X obj 185 45 r initialGain;
+#X text 25 527 up-down tilt;
 #X connect 1 0 26 2;
 #X connect 2 0 26 0;
 #X connect 3 0 26 1;

@@ -58,14 +58,14 @@
                 if (aCircle.pitch.intValue%12 == 0) {CGContextSetRGBFillColor(context, 0.8, 0.0, 0.0, alpha); currentNoteName = @"C";}
                 else if (aCircle.pitch.intValue%12 == 1) {CGContextSetRGBFillColor(context, 1.0, 0.25, 0.0, alpha); currentNoteName = @"C#";}
                 else if (aCircle.pitch.intValue%12 == 2) {CGContextSetRGBFillColor(context, 1.0, 0.5, 0.0, alpha); currentNoteName = @"D";}
-                else if (aCircle.pitch.intValue%12 == 3) {CGContextSetRGBFillColor(context, 1.0, 0.75, 0.0, alpha); currentNoteName = @"D#";}
+                else if (aCircle.pitch.intValue%12 == 3) {CGContextSetRGBFillColor(context, 1.0, 0.75, 0.0, alpha); currentNoteName = @"Eb";}
                 else if (aCircle.pitch.intValue%12 == 4) {CGContextSetRGBFillColor(context, 1.0, 1.0, 0.0, alpha); currentNoteName = @"E";}
                 else if (aCircle.pitch.intValue%12 == 5) {CGContextSetRGBFillColor(context, 0.5, 1.0, 0.0, alpha); currentNoteName = @"F";}
                 else if (aCircle.pitch.intValue%12 == 6) {CGContextSetRGBFillColor(context, 0.0, 1.0, 0.0, alpha); currentNoteName = @"F#";}
                 else if (aCircle.pitch.intValue%12 == 7) {CGContextSetRGBFillColor(context, 0.0, 1.0, 0.5, alpha); currentNoteName = @"G";}
                 else if (aCircle.pitch.intValue%12 == 8) {CGContextSetRGBFillColor(context, 0.0, 1.0, 1.0, alpha); currentNoteName = @"G#";}
                 else if (aCircle.pitch.intValue%12 == 9) {CGContextSetRGBFillColor(context, 0.0, 0.5, 1.0, alpha); currentNoteName = @"A";}
-                else if (aCircle.pitch.intValue%12 == 10) {CGContextSetRGBFillColor(context, 0.0, 0.0, 1.0, alpha); currentNoteName = @"A#";}
+                else if (aCircle.pitch.intValue%12 == 10) {CGContextSetRGBFillColor(context, 0.0, 0.0, 1.0, alpha); currentNoteName = @"Bb";}
                 else if (aCircle.pitch.intValue%12 == 11) {CGContextSetRGBFillColor(context, 0.5, 0.0, 0.9, alpha); currentNoteName = @"B";}
                 else {NSLog(@"%i",aCircle.pitch.intValue%12);}
                 

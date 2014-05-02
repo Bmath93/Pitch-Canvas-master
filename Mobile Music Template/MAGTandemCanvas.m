@@ -25,7 +25,8 @@
     [super viewDidLoad];
     
     //initialize all of the OSC objects
-    self.oscClient = [[F53OSCClient alloc] init];
+    //self.oscClient = [[F53OSCClient alloc] init];
+    
     /*
     NSArray *arguments1 = [[NSArray alloc] initWithObjects:[NSNumber numberWithInt:0], nil];
     NSArray *arguments2 = [[NSArray alloc] initWithObjects:[NSNumber numberWithInt:1], nil];
@@ -36,12 +37,12 @@
     */
     
     //finish setting up the OSC server
-    self.oscServer = [[F53OSCServer alloc] init];
+    /*self.oscServer = [[F53OSCServer alloc] init];
     [self.oscServer setPort:self.userPort];
     [self.oscServer setDelegate:self];
     BOOL success = [self.oscServer startListening];
     if (success){NSLog(@"success");}
-    else{NSLog(@"failure");};
+    else{NSLog(@"failure");};*/
     
     /*
     NSLog(self.userAddress);
@@ -58,32 +59,16 @@
 */
 - (IBAction)recordNextGesture1:(id)sender {
     //send to the other device a message indicating that the next gesture should be recorded and transmitted across
-    [self.oscClient sendPacket:[    F53OSCMessage messageWithAddressPattern:@"/Canvas/gestureRequest1"
+    /*[self.oscClient sendPacket:[    F53OSCMessage messageWithAddressPattern:@"/Canvas/gestureRequest1"
                                                                   arguments:[[NSArray alloc] initWithObjects:[NSNumber numberWithInt:1], nil]]
                         toHost:self.userAddress
-                        onPort:self.userPort];
+                        onPort:self.userPort];*/
+    
+    [self.oscButler sendNumber:1];
 }
 
-- (void)takeMessage:(F53OSCMessage *)message {
-    //NSLog(@"in takeMessage:message");
-    NSString *addressPattern = message.addressPattern;
-    NSArray *arguments = message.arguments;
-    /*
-    NSNumber *receivedInt = [arguments objectAtIndex:0];
-    //NSLog(@"%i",[receivedInt intValue]);
-    [self changeMessageDisplayLabelTo:[receivedInt intValue]];
-    if ([addressPattern isEqualToString:@"/path1/message1"]){
-        NSLog(@"intercepted message1");
-    }
-    else if ([addressPattern isEqualToString:@"/path1/message2"]){
-        NSLog(@"intercepted message2");
-    }
-     */
-    if ([addressPattern isEqualToString:@"/TandemCanvas1/Gesture1"]){
-        //finish implementing the initFromArray method in MAGGesture and use here
-    }
-}
 - (IBAction)playCurrentGestureUponNextTouch1:(id)sender {
+    
 }
 
 /*

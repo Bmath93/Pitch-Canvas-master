@@ -23,6 +23,7 @@
 //@property (strong, nonatomic) IBOutlet MAGBackground *theBackground;
 
 @property MAGPdButler *pdButler;
+@property (weak, nonatomic) MAGOSCButler *oscButler;
 @property MAGSoundboard *theSoundboard;
 
 @property float baseKey;

@@ -117,7 +117,7 @@
     float scaledRevValue = 1.5*ABS(yTilt)+0.1;
     if (scaledRevValue > 1.0) {scaledRevValue = 1.0;}
     [self setFullReverb:scaledRevValue];
-    NSLog(@"%f",scaledRevValue);
+    //NSLog(@"%f",scaledRevValue);
 }
 -(void) handleAccelerometerDataZ:(float)zTilt{
     

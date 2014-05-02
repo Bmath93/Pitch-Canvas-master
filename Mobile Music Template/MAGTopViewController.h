@@ -8,9 +8,13 @@
 
 #import <UIKit/UIKit.h>
 #import "MAGPdButler.h"
+#import "MAGOSCButler.h"
+#import "MAGMainViewController.h"
+#import "MAGTandemCanvas.h"
 
 @interface MAGTopViewController : UIViewController
 
 @property MAGPdButler *pdButler;
+@property MAGOSCButler *oscButler;
 
 @end

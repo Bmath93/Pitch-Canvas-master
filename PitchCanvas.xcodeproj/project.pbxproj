@@ -25,7 +25,6 @@
 		333A317A18F9AFA500FE230A /* README.markdown in Resources */ = {isa = PBXBuildFile; fileRef = 333A316A18F9AFA500FE230A /* README.markdown */; };
 		333A31B418F9B2A400FE230A /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 333A31B118F9B16A00FE230A /* Security.framework */; };
 		333A31F218F9B56B00FE230A /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 333A31F118F9B56B00FE230A /* CFNetwork.framework */; };
-		3376AB7618F8A1AD004F72CC /* MAGTandemSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3376AB7518F8A1AD004F72CC /* MAGTandemSettingsViewController.m */; };
 		33832B511901909C00F7246D /* MAGTopViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 33832B501901909C00F7246D /* MAGTopViewController.m */; };
 		33832B551901928D00F7246D /* MAGPdButler.m in Sources */ = {isa = PBXBuildFile; fileRef = 33832B541901928D00F7246D /* MAGPdButler.m */; };
 		33832B5B1901A03F00F7246D /* MAGChannel.m in Sources */ = {isa = PBXBuildFile; fileRef = 33832B5A1901A03F00F7246D /* MAGChannel.m */; };
@@ -173,8 +172,6 @@
 		333A31B118F9B16A00FE230A /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		333A31B518F9B32600FE230A /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		333A31F118F9B56B00FE230A /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
-		3376AB7418F8A1AD004F72CC /* MAGTandemSettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MAGTandemSettingsViewController.h; sourceTree = "<group>"; };
-		3376AB7518F8A1AD004F72CC /* MAGTandemSettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MAGTandemSettingsViewController.m; sourceTree = "<group>"; };
 		33832B4F1901909C00F7246D /* MAGTopViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MAGTopViewController.h; sourceTree = "<group>"; };
 		33832B501901909C00F7246D /* MAGTopViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MAGTopViewController.m; sourceTree = "<group>"; };
 		33832B531901928D00F7246D /* MAGPdButler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MAGPdButler.h; sourceTree = "<group>"; };
@@ -391,8 +388,6 @@
 				37600CA6180BA10000934FE2 /* MAGInfoViewController.m */,
 				3A89562F1799BEF000788E9D /* MAGMainViewController.h */,
 				3A8956301799BEF000788E9D /* MAGMainViewController.m */,
-				3376AB7418F8A1AD004F72CC /* MAGTandemSettingsViewController.h */,
-				3376AB7518F8A1AD004F72CC /* MAGTandemSettingsViewController.m */,
 				33FF575118E5EA300052A226 /* MAGTandemCanvas.h */,
 				33FF575218E5EA300052A226 /* MAGTandemCanvas.m */,
 				33832B5C1901A21000F7246D /* MAGCanvas.h */,
@@ -708,7 +703,6 @@
 				333A317218F9AFA500FE230A /* F53OSCTimeTag.m in Sources */,
 				37600CA7180BA10000934FE2 /* MAGInfoViewController.m in Sources */,
 				3AB75F8E17AAC506007A6A62 /* m_pd.h in Sources */,
-				3376AB7618F8A1AD004F72CC /* MAGTandemSettingsViewController.m in Sources */,
 				33FD7305190C2E4E000FED7A /* MAGOSCButler.m in Sources */,
 				333A316F18F9AFA500FE230A /* F53OSCParser.m in Sources */,
 				3AB75F8F17AAC509007A6A62 /* shared.c in Sources */,

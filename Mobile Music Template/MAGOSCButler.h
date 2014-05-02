@@ -12,7 +12,11 @@
 @interface MAGOSCButler : NSObject <F53OSCPacketDestination>
 
 @property BOOL shouldRecordNextGesture;
+@property int sendPortNumber;
+@property int receivedNumber;
 
 -(id) initToAddress:(NSString*)address onPort:(int)portNumber;
+
+-(void) sendNumber:(int)aNumber;
 
 @end
